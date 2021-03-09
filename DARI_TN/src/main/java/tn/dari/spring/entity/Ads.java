@@ -1,7 +1,7 @@
-/*package tn.dari.spring.entity;
+package tn.dari.spring.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,21 +16,13 @@ public class Ads implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAds;
 	
-	private Set<Favorites> favorites ;	
 	
-	
-	@OneToMany(mappedBy="ads") 
-	public Set<Favorites> getFavorites() {
-		return favorites;
-	}
-	public void setFavorites(Set<Favorites> favorites) {
-		this.favorites = favorites;
-	}
 	private String content ;
 	private String emplacement ;
 	private String surface ;
 	private String composition ;
 	private int rooms ;
+	
 	public Ads() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -71,11 +63,9 @@ public class Ads implements Serializable {
 	public void setRooms(int rooms) {
 		this.rooms = rooms;
 	}
-	public Ads(int idAds, Set<Favorites> favorites, String content, String emplacement, String surface,
-			String composition, int rooms) {
+	public Ads(int idAds, String content, String emplacement, String surface, String composition, int rooms) {
 		super();
 		this.idAds = idAds;
-		this.favorites = favorites;
 		this.content = content;
 		this.emplacement = emplacement;
 		this.surface = surface;
@@ -87,6 +77,12 @@ public class Ads implements Serializable {
 	
 	
 	
+	}
+	
+	
+	
+	
+	
 	
 
-}*/
+
