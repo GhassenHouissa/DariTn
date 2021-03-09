@@ -54,10 +54,10 @@ public class User implements Serializable {
 		 
 	@OneToMany
 private List<Claim> claims;
-	@OneToMany
-	private List<Visit> visits;
-	@OneToMany
-	private List<Favorites> favorites;
+//	@OneToMany
+//	private List<Visit> visits;
+//	@OneToMany
+//	private List<Favorites> favorites;
 	@OneToMany
 	private List<Bank> banks;
 	@OneToMany
