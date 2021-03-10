@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.dari.spring.entity.Admin;
-import tn.dari.spring.entity.User;
+
 import tn.dari.spring.repository.AdminRepository;
 
 
@@ -42,7 +42,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public User retrieveAdmin(Long id) {
+	public Admin retrieveAdmin(Long id) {
 		Optional<Admin> admins=adminRepository.findById(id);
 		if (admins != null ) {
 			return admins.get();
