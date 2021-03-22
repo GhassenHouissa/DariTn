@@ -1,41 +1,27 @@
 package tn.dari.spring.entity;
 
-import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
-@Table(name="T_CUSTOMER")
 public class Customer extends User {
 	
 	public static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_customer;
 	private String log_customer;
 	private String psswd_customer;
 	private String email_customer;
-	@Temporal(TemporalType.DATE)
-	private Date date;
-	 
 	
-	public Long getId_customer() {
-		return id_customer;
-	}
-
-	public void setId_customer(Long id_customer) {
-		this.id_customer = id_customer;
-	}
-
+//	private List<Comment> comments;
+	
+	
+	
+//	private List<Notification> notifications;
+	
+//	private List<Orders> ords;
+	
+//	private List<Chat> chats;
+	
 	public String getLog_customer() {
 		return log_customer;
 	}
@@ -60,27 +46,8 @@ public class Customer extends User {
 		this.email_customer = email_customer;
 	}
 
-	public Date getDate() {
-		return date;
-	}
+	
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
 
-	@OneToMany
-	private List<Comment> comments;
-	
-	@OneToMany
-	private List<Search> searchs;
-	
-	@OneToMany
-	private List<Notification> notifications;
-	
-	@OneToMany
-	private List<Orders> ords;
-	
-	@OneToMany
-	private List<Chat> chats;
 
 }

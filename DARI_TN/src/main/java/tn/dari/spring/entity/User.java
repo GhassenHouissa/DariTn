@@ -12,8 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import net.bytebuddy.description.modifier.EnumerationState;
-
 
 @Entity
 @Table(name="T_USER")
@@ -26,6 +24,28 @@ public class User implements Serializable {
 		private String FirstName;
 		private String LastName;
 		private String Email;
+		@Enumerated(EnumType.STRING)
+		private Role role;
+		
+		@OneToMany
+		private List<Claim> claims;
+			@OneToMany
+			private List<Visit> visits;
+//			private List<Favorites> favorites;
+			@OneToMany
+			private List<Bank> banks;
+//			@OneToMany
+//			private List<Historical>historicals;
+			@OneToMany
+			private List<Search> searchs;
+
+		
+		public Role getRole() {
+			return role;
+		}
+		public void setRole(Role role) {
+			this.role = role;
+		}
 		public Long getId() {
 			return Id;
 		}
@@ -52,15 +72,13 @@ public class User implements Serializable {
 		}
 		
 		 
-	@OneToMany
-private List<Claim> claims;
-	@OneToMany
-	private List<Visit> visits;
-	@OneToMany
-	private List<Favorites> favorites;
-	@OneToMany
-	private List<Bank> banks;
-	@OneToMany
-	private List<Historical>historicals;
+//	public List<Favorites> getFavorites() {
+//			return favorites;
+//		}
+//		public void setFavorites(List<Favorites> favorites) {
+//			this.favorites = favorites;
+//		}
 
+
+	
 }

@@ -6,7 +6,7 @@ import javax.persistence.OneToMany;
 
 public class Rating {
 
-	@OneToMany
+//	@OneToMany
 	private List<Historical> historicals;
 
 }

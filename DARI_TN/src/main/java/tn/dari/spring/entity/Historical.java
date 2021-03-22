@@ -4,9 +4,9 @@ import javax.persistence.ManyToOne;
 
 public class Historical {
 
-	@ManyToOne
+//	@ManyToOne
 	User users;
-	@ManyToOne
+//	@ManyToOne
 	private Rating ratings;
 
 }

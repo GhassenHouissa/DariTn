@@ -8,6 +8,5 @@ public class Comment {
 
 
 	
-	@ManyToOne
 	private Customer customer; 
 }

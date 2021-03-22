@@ -4,7 +4,7 @@ import javax.persistence.ManyToOne;
 
 public class Favorites {
 
-	@ManyToOne
+	
 	User users;
 
 }
