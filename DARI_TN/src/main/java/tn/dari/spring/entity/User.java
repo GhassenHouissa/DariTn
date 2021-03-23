@@ -12,66 +12,91 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="T_USER")
+@Table(name = "T_USER")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-		@Id
-		@GeneratedValue (strategy = GenerationType.IDENTITY)
-		private Long Id; 
-		private String FirstName;
-		private String LastName;
-		private String Email;
-		@Enumerated(EnumType.STRING)
-		private Role role;
-		
-		@OneToMany
-		private List<Claim> claims;
-			@OneToMany
-			private List<Visit> visits;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Id;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String login;
+	private String password;
+
+	@Enumerated(EnumType.STRING)
+	private Role role;
+
+	@OneToMany
+	private List<Claim> claims;
+	@OneToMany
+	private List<Visit> visits;
 //			private List<Favorites> favorites;
-			@OneToMany
-			private List<Bank> banks;
+	@OneToMany
+	private List<Bank> banks;
 //			@OneToMany
 //			private List<Historical>historicals;
-			@OneToMany
-			private List<Search> searchs;
+	@OneToMany
+	private List<Search> searchs;
 
-		
-		public Role getRole() {
-			return role;
-		}
-		public void setRole(Role role) {
-			this.role = role;
-		}
-		public Long getId() {
-			return Id;
-		}
-		public void setId(Long id) {
-			Id = id;
-		}
-		public String getFirstName() {
-			return FirstName;
-		}
-		public void setFirstName(String firstName) {
-			FirstName = firstName;
-		}
-		public String getLastName() {
-			return LastName;
-		}
-		public void setLastName(String lastName) {
-			LastName = lastName;
-		}
-		public String getEmail() {
-			return Email;
-		}
-		public void setEmail(String email) {
-			Email = email;
-		}
-		
-		 
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 //	public List<Favorites> getFavorites() {
 //			return favorites;
 //		}
@@ -79,6 +104,4 @@ public class User implements Serializable {
 //			this.favorites = favorites;
 //		}
 
-
-	
 }
