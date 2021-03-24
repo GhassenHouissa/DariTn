@@ -31,29 +31,6 @@ import tn.dari.spring.util.UserLogoutSuccessHandler;
 			return new BCryptPasswordEncoder();
 		}
 
-//	    @Override
-//	    protected void configure(final HttpSecurity http) throws Exception {
-//	    	http
-//	        .csrf().disable()
-//	        .authorizeRequests()
-//	        .antMatchers("/admin/**").hasRole("ADMIN")
-//	        .antMatchers("/anonymous*").anonymous()
-//	        .antMatchers("/login*").permitAll()
-//	        .anyRequest().authenticated()
-//	        .and()
-//	        .formLogin()
-//	        .loginPage("/login.html")
-//	        .loginProcessingUrl("/perform_login")
-////	        .defaultSuccessUrl("/homepage.html", true)
-//	        .failureUrl("/login.html?error=true")
-//	        .failureHandler(authenticationFailureHandler())
-//	        .and()
-//	        .logout()
-////	        .logoutUrl("/perform_logout")
-//	        .deleteCookies("JSESSIONID")
-//	        .logoutSuccessHandler(logoutSuccessHandler());
-//	    }
-	//    
 		@Bean
 		public AuthenticationFailureHandler authenticationFailureHandler() {
 			return new UserAuthenticationFailureHandler();
@@ -66,14 +43,12 @@ import tn.dari.spring.util.UserLogoutSuccessHandler;
 
 		@Override
 		protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//	    	PasswordEncoder encoder = 
-//	          PasswordEncoderFactories.createDelegatingPasswordEncoder();
 			
 			
-			User user = userService.retrieveUserByLogin("gaston");
-			auth.inMemoryAuthentication().withUser(user.getLogin())
+			//User user = userService.retrieveUserByLogin("gaston"); user.getLogin()  user.getPassword()
+			auth.inMemoryAuthentication().withUser("USER")
 //	          .password(encoder.encode("password"))
-					.password(passwordEncoder().encode(user.getPassword())).roles("CUSTOMER").and().withUser("admin")
+					.password(passwordEncoder().encode("PASSWORD")).roles("CUSTOMER").and().withUser("admin")
 //	          .password(encoder.encode("admin"))
 					.password(passwordEncoder().encode("admin")).roles("USER", "ADMIN");
 		}

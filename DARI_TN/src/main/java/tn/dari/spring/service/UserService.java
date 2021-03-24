@@ -15,4 +15,5 @@ public interface UserService {
 	User updateUser(User u);
 	User retrieveUser(Long id);
 	User retrieveUserByLogin(String login);
+	List<User> retrieveUserById(Long id);
 }

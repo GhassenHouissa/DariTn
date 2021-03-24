@@ -3,6 +3,7 @@ package tn.dari.spring.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -19,11 +20,17 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long Id;
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private String email;
+	@Column
 	private String login;
+	@Column
 	private String password;
 
 	@Enumerated(EnumType.STRING)
