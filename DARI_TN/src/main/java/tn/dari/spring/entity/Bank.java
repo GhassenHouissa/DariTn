@@ -7,6 +7,10 @@ public class Bank {
 	private String interet_rate;
 	
 	
+	public Bank() {
+		
+	}
+	
 	public Bank(String name, String bank_id, String interet_rate) {
 		super();
 		this.name = name;
