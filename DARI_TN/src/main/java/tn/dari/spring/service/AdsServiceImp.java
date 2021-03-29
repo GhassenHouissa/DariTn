@@ -25,7 +25,7 @@ public List<Ads> findAll() {
 	return ads;
 }
 
-@Override
+@Override 
 public Ads updateAds(Ads a) {
 	// TODO Auto-generated method stub
 	return null;

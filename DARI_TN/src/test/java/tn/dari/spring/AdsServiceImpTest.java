@@ -27,7 +27,7 @@ public class AdsServiceImpTest {
 		a.setLocation4(Location.Region);
 		a=x1.addAds(a);
 		
-	}
+	} 
 	
 	
 	

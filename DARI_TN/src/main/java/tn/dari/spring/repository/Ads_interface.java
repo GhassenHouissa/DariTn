@@ -12,3 +12,4 @@ public List<Ads> findByTitle4Contains(String title);
 public List<Ads> findByLocation4Contains(String location);
 
 }
+ 

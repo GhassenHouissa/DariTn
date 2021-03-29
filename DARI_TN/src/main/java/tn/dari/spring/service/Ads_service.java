@@ -17,3 +17,4 @@ public interface Ads_service {
 	List<Ads> findByTransaction(String t);
 
 }
+ 
