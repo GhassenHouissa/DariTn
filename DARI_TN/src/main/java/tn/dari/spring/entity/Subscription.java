@@ -14,39 +14,13 @@ import javax.persistence.Table;
 @Table(name = "Subscription")
 public class Subscription implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="Subscription_ID")
-	private Long id;
-	
+	private Long SubscriptionId;
 	@Column(name="Subscription_type")
-	private String type;
-	
-	@OneToOne
-	private User User;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public User getUser() {
-		return User;
-	}
-
-	public void setUser(User user) {
-		User = user;
-	}
-
+	private String Subscription_type;
+	@OneToOne(mappedBy="Subscription")
+	private User User  ;
 }

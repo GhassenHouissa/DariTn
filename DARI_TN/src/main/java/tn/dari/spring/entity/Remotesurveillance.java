@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,11 +23,8 @@ public class Remotesurveillance implements Serializable {
 	@Column(name="Remotesurveillance_ID")
 	private Long RemotesurveillanceId;
 
-	@Column(name="TC_CORRECTION")
-	private String tcCorrection;
-
-	@ManyToOne
-	private User User;
+	@OneToOne
+	private Subscription Subscription  ;
 
 	public Long getRemotesurveillanceId() {
 		return RemotesurveillanceId;
@@ -36,20 +34,18 @@ public class Remotesurveillance implements Serializable {
 		RemotesurveillanceId = remotesurveillanceId;
 	}
 
-	public String getTcCorrection() {
-		return tcCorrection;
+	public Subscription getSubscription() {
+		return Subscription;
 	}
 
-	public void setTcCorrection(String tcCorrection) {
-		this.tcCorrection = tcCorrection;
+	public void setSubscription(Subscription subscription) {
+		Subscription = subscription;
 	}
+	
+	
+	
+	
+	
 
-	public User getUser() {
-		return User;
-	}
-
-	public void setUser(User user) {
-		User = user;
-	}
 
 }

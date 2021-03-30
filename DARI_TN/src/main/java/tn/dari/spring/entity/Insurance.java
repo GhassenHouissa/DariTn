@@ -25,7 +25,7 @@ private Long id;
 private String type;
 		
 @OneToOne
-private User User;
+private Subscription Subscription;
 
 public Long getId() {
 	return id;
@@ -43,10 +43,12 @@ public void setType(String type) {
 	this.type = type;
 }
 
-public User getUser() {
-	return User;
+public Subscription getSubscription() {
+	return Subscription;
 }
 
-public void setUser(User user) {
-	User = user;
-}}
+public void setSubscription(Subscription subscription) {
+	Subscription = subscription;
+}
+
+}
