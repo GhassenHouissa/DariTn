@@ -17,19 +17,19 @@ public class Admin extends User {
 	
 	public static final long serialVersionUID = 1L;
 	
-	@Id
+	/*@Id
 	@GeneratedValue(strategy  = GenerationType.IDENTITY)
-	private Long id;	
+	private Long id;*/	
 	private String logadmin;
 	private String psswd;
 	@Enumerated(EnumType.STRING)
 	private Role role;
-	public Long getId() {
+	/*public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
+	}*/
 	public String getLogadmin() {
 		return logadmin;
 	}

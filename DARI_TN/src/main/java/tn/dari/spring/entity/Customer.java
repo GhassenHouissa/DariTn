@@ -2,7 +2,9 @@ package tn.dari.spring.entity;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,9 +20,9 @@ public class Customer extends User {
 	
 	public static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_customer;
+	//@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//private Long id_customer;
 	private String log_customer;
 	private String psswd_customer;
 	private String email_customer;
@@ -28,13 +30,13 @@ public class Customer extends User {
 	private Date date;
 	 
 	
-	public Long getId_customer() {
+	/*public Long getId_customer() {
 		return id_customer;
 	}
 
 	public void setId_customer(Long id_customer) {
 		this.id_customer = id_customer;
-	}
+	}*/
 
 	public String getLog_customer() {
 		return log_customer;
@@ -68,17 +70,17 @@ public class Customer extends User {
 		this.date = date;
 	}
 
-	@OneToMany
-	private List<Comment> comments;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="customer_comment")
+	private Set<Comment> comment;
 	
-	@OneToMany
-	private List<Search> searchs;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="customer_search")
+	private Set<Search> search;
 	
-	@OneToMany
-	private List<Notification> notifications;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="customer_notif")
+	private Set<Notification> notification;
 	
-	@OneToMany
-	private List<Orders> ords;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="customer_orders")
+	private Set<Orders> orders;
 	
 	@OneToMany
 	private List<Chat> chats;

@@ -2,7 +2,9 @@ package tn.dari.spring.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,7 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import net.bytebuddy.description.modifier.EnumerationState;
+
 
 @Entity
 @Table(name = "T_USER")
@@ -60,13 +62,13 @@ public class User implements Serializable {
 
 	@OneToMany
 	private List<Claim> claims;
-	@OneToMany
-	private List<Visit> visits;
-	@OneToMany
-	private List<Favorites> favorites;
-	@OneToMany
-	private List<Bank> banks;
-	@OneToMany
-	private List<Historical> historicals;
+	/*@OneToMany
+	private List<Visit> visits;*/
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	private Set<Favorites> favorites;
+	/*@OneToMany
+	private List<Bank> banks;*/
+	/*@OneToMany
+	private List<Historical> historicals;*/
 
 }
