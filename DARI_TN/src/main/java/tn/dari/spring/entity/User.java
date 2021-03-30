@@ -31,6 +31,7 @@ public class User implements Serializable {
 	public Long getId() {
 		return Id;
 	}
+	//
 
 	public void setId(Long id) {
 		Id = id;
