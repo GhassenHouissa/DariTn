@@ -1,7 +1,10 @@
 package tn.dari.spring.control;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -44,12 +47,11 @@ public class ContractControl {
 //	
 //	@GetMapping("ShowAllByName/{productName}")
 //	@ResponseBody 
-//	public List<Contract> RetrieveAllByName(@PathVariable("productName")String name){
-//		return productService.GetAllByName(name);
+//	public List<Contract> RetrieveAllByName(@PathVariable("productName")Long id){
+//		return CS.(id);
 //	}
 //	
-//
-//	
+	
 //	
 //	@PostMapping("/add-contract")
 //	@ResponseBody
@@ -69,7 +71,7 @@ public class ContractControl {
 //	
 // 
 	//modif///
-@PutMapping("/update-Contract/{Contract_ID}")
+@PutMapping("/update-Contract")
 @ResponseBody
    public Contract updateContract(@RequestBody Contract c) {
 	return CS.updateContract(c);
