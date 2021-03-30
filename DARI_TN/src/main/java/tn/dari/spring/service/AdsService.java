@@ -6,15 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import tn.dari.spring.entity.Ads;
 @Repository
-public interface Ads_service {
-	List<Ads> findAll ();
-
+public interface AdsService {
+	List<Ads> retrieveAll ();
 	Ads addAds(Ads a);
-	Ads updateAds(Ads a);
+	Ads updateAds(Long id , Ads a);
 	void deleteAds (Long id);
-	Ads findById(Long id );
-	List<Ads> findByTitleContains(String t);
-	List<Ads> findByTransaction(String t);
+	Ads retrieveById(Long id );
+
 
 }
  

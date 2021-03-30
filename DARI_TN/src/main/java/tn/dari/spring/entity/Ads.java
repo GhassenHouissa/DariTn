@@ -1,5 +1,7 @@
 package tn.dari.spring.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -17,7 +19,7 @@ import lombok.ToString;
 @Entity
 @Table(name="ADS")
 @Data @AllArgsConstructor @NoArgsConstructor @ToString
-public class Ads  {
+public class Ads implements Serializable {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long id4;
