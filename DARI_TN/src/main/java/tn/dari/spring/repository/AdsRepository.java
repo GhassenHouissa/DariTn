@@ -1,10 +1,8 @@
 package tn.dari.spring.repository;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -12,10 +10,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.entity.Category;
-import tn.dari.spring.entity.Transaction;
 @CrossOrigin("*")
 @RepositoryRestResource
-public interface AdsRepository extends CrudRepository<Ads, Long> {
+public interface AdsRepository extends JpaRepository<Ads, Long> {
 	@RestResource(path="/byDescr")
 public Page<Ads> findByDescription4Contains(@Param("m4") String description, Pageable pageable);
 	@RestResource(path="/byTitle")

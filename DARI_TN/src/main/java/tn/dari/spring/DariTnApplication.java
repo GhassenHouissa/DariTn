@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import tn.dari.spring.entity.Ads;
-
 @SpringBootApplication
 public class DariTnApplication implements CommandLineRunner{
 	@Autowired
