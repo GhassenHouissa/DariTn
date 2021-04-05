@@ -27,14 +27,14 @@ private int roomArea4;
 private String composition4;
 
 
-@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
-private Set<Favorites> favorites;
-
-@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
-private Set<Visit> visits;
-
-@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
-private Set<Product> products;
+//@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
+//private Set<Favorites> favorites;
+//
+//@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
+//private Set<Visit> visits;
+//
+//@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
+//private Set<Product> products;
 
 
 

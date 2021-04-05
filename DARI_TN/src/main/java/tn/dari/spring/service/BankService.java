@@ -2,6 +2,7 @@ package tn.dari.spring.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.dari.spring.entity.Bank;
@@ -10,6 +11,7 @@ import tn.dari.spring.repository.BankRepository;
 @Service 
 public class BankService {
 	
+	@Autowired
 	private BankRepository bankRepository;
 	
 	public List<Bank> findAllBanks(){

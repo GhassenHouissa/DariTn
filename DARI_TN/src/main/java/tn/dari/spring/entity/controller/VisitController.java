@@ -24,10 +24,9 @@ public class VisitController {
 
 	@Autowired 
     private VisitService visitService;
-
-
+    
 	@GetMapping("/all")
-	public ResponseEntity<List<Visit>> getAllVisits {
+	public ResponseEntity<List<Visit>> getAllVisits() {
     	return new ResponseEntity<List<Visit>>(visitService.findAllVisits(), HttpStatus.OK);
 	}
     

@@ -3,10 +3,12 @@ package tn.dari.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.dari.spring.entity.Visit;
 import tn.dari.spring.repository.VisitRepository;
 
+@Service
 public class VisitService {
 	
 @Autowired

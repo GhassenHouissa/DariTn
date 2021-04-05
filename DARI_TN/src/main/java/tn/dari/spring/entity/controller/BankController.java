@@ -31,7 +31,7 @@ public class BankController {
 	}
     
     @PostMapping("/add")
-	public ResponseEntity<Bank> addBank(@Validated @RequestBody Bank bank) {
+	public ResponseEntity<Bank> addBank(@RequestBody Bank bank) {
     	Bank bank1 = bankService.addBank(bank);
 		if (bank1 == null) return new ResponseEntity<Bank>(bank, HttpStatus.CONFLICT);
 		return new ResponseEntity<Bank>(bank1, HttpStatus.OK);

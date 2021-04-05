@@ -22,11 +22,18 @@ import tn.dari.spring.service.VisitService;
 	
 	private String visite_date;
 
-	public Visit(String visite_date, Long idVisit, Ads ads) {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private  Long idVisit;
+
+	public Visit() {
+		
+	}
+
+	public Visit(String visite_date, Long idVisit) {
 		super();
 		this.visite_date = visite_date;
 		this.idVisit = idVisit;
-		this.ads = ads;
 	}
 
 	public String getVisite_date() {
@@ -37,12 +44,6 @@ import tn.dari.spring.service.VisitService;
 		this.visite_date = visite_date;
 	}
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-private  Long idVisit;
-	
-	@ManyToOne
-	Ads ads;
 	public Long getIdVisit() {
 		return idVisit;
 	}
@@ -51,26 +52,12 @@ private  Long idVisit;
 		this.idVisit = idVisit;
 	}
 	
-	private List<Visit> visit = new ArrayList<>(Arrays.asList(
-			));
+
 	
-	@Autowired 
-    private VisitService visitService;
-
-    @RequestMapping("/visit")
-    public List<Visit> getAllVisits() {
-		return getAllVisits();
-	}
-    
-  
-
-	public List<Visit> getVisit() {
-		return visit;
-	}
-
-	public void setVisit(List<Visit> visit) {
-		this.visit = visit;
-	}
+//	@ManyToOne
+//	Ads ads;
+	
+	
 
 	
 }
