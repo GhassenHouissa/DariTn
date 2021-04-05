@@ -5,6 +5,5 @@ import javax.persistence.ManyToOne;
 public class Notification {
 
 
-	private Customer customers;
 
 }

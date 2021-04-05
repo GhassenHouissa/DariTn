@@ -23,14 +23,14 @@ public class UserRestController {
 	@ResponseBody
 	public List<User> getUsers(){
 		List<User> list = userService.retrieveAllUsers() ;
-		return list;
+		return list; 
 	}
 	@GetMapping("/retrieve-all-users/{user-id}")
 	@ResponseBody
 	public User retrieveUser(@PathVariable("user-id") Long userId) {
 		return userService.retrieveUser(userId);
 	}
-	
+	 
 	@PostMapping("/add-user")
 	@ResponseBody
 	public User addUser (@RequestBody User u) {
@@ -50,5 +50,11 @@ public class UserRestController {
 	@ResponseBody
 	public void removeUser(@PathVariable("user-id") Long userId) {
 		userService.deleteUser(userId);
+	}
+	 
+	@GetMapping("/retrieve-user/{login}")
+	@ResponseBody
+	public User retrieveUserByLogin (@PathVariable("login") String login) {
+		return userService.retrieveUserByLogin(login);
 	}
 }

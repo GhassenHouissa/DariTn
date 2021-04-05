@@ -6,6 +6,5 @@ import javax.persistence.ManyToOne;
 public class Orders {
 
 	
-	private Customer customers;
 
 }

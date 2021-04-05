@@ -5,6 +5,5 @@ import javax.persistence.ManyToOne;
 public class Chat {
 
 	
-	private Customer customers;
 
 }

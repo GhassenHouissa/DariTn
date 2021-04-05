@@ -8,5 +8,4 @@ public class Comment {
 
 
 	
-	private Customer customer; 
 }

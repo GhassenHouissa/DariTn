@@ -33,8 +33,37 @@ public class User implements Serializable {
 	@Column
 	private String password;
 
+
 	@Enumerated(EnumType.STRING)
 	private Role role;
+
+	public User( ) {
+		
+	}
+	 
+	 
+	
+	/**
+	 * @param id
+	 * @param firstName
+	 * @param lastName
+	 * @param email
+	 * @param login
+	 * @param password
+	 * @param role
+	 */
+	public User(Long id, String firstName, String lastName, String email, String login, String password, Role role) {
+		super();
+		Id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.login = login;
+		this.password = password;
+		this.role = role;
+	}
+
+
 
 	@OneToMany
 	private List<Claim> claims;

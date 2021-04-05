@@ -7,7 +7,7 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
-import tn.dari.spring.control.SecSecuityConfig;
+import tn.dari.spring.config.SecSecuityConfig;
 
 public class AppInitializer implements WebApplicationInitializer {
 	 @Override
