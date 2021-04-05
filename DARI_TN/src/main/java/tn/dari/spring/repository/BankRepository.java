@@ -2,8 +2,8 @@ package tn.dari.spring.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import tn.dari.spring.entity.Visit;
+import tn.dari.spring.entity.Bank;
 
-public interface VisitRepository extends JpaRepository<Visit, Long> {
+public interface BankRepository extends JpaRepository<Bank, Long>{
 
 }
