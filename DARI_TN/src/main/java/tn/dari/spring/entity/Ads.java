@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,8 +50,8 @@ public class Ads implements Serializable {
 	private int area4;
 	@Column(name="PRICE")
 	private double price4;
-	@Column(name="MEDIA", length = 84)
-	private String media;
+	@Column(name="MEDIA", length = 1200)
+	private MultipartFile[] media;
 	/*@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
 private Set<Favorites> favorites;
 

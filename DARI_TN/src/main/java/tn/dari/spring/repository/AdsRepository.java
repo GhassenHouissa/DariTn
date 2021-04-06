@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.entity.Category;
+import tn.dari.spring.entity.Transaction;
 @CrossOrigin("*")
 @RepositoryRestResource
 public interface AdsRepository extends JpaRepository<Ads, Long> {
@@ -21,6 +22,7 @@ public Page<Ads> findByTitle4Contains(@Param("m1") String title, Pageable pageab
 //public Page<Ads> findByTransaction4(@Param("m2") Transaction transaction, Pageable pageable);
 	@RestResource(path="/byCategory")
 public Page<Ads> findByCategory4(@Param("m3") Category category, Pageable pageable);
+	@RestResource(path="/byTransaction")
+public Page<Ads> findByTransaction4(@Param("m5") Transaction transaction, Pageable pageable);
 
 }
- 
