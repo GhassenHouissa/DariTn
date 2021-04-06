@@ -28,11 +28,12 @@ public class Search implements Serializable {
 	private String type ;
 	private String location ;
 	private Float price ;
+	private Long nbr;
 
 	
 	@ManyToOne
 	@JsonIgnore
-	private Customer customer_search ;
+	private User user ;
 
     //Constructeur par défaut
 	public Search() {
@@ -42,23 +43,38 @@ public class Search implements Serializable {
 
 	
 	//constructeur parametrés 
-	public Search( String type, String location, Float price) {
-		super();
-		
-		this.type = type;
-		this.location = location;
-		this.price = price;
-	}
 	
 	
-
-
-	public Search(Long id, String type, String location, Float price) {
+	public Search(Long id, String type, String location, Float price, Long nbr, User user) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.location = location;
 		this.price = price;
+		this.nbr = nbr;
+		this.user = user;
+	}
+	
+	
+
+	
+
+	public Search(String type, String location, Float price, Long nbr, User user) {
+		super();
+		this.type = type;
+		this.location = location;
+		this.price = price;
+		this.nbr = nbr;
+		this.user = user;
+	}
+	
+	
+	
+
+
+	public Search(String type) {
+		super();
+		this.type = type;
 	}
 
 
@@ -66,6 +82,7 @@ public class Search implements Serializable {
 	public Long getId() {
 		return id;
 	}
+
 
 
 	public void setId(Long id) {
@@ -102,6 +119,31 @@ public class Search implements Serializable {
 		this.price = price;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	public Long getNbr() {
+		return nbr;
+	}
+
+
+	public void setNbr(Long nbr) {
+		this.nbr = nbr;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	
 	
 	
 	

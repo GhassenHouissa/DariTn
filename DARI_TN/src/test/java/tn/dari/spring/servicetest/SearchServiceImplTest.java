@@ -29,7 +29,7 @@ public class SearchServiceImplTest {
 	@Test
 	public void addSearchTest(){
 		
-		Search s = new Search("villa","tunis",(float) 130000000);
+		Search s = new Search(null, "villa","tunis",(float) 130000000, null, null);
 		ss.addSearch(s);
 	}
 	

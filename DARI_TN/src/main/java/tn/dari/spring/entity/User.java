@@ -6,8 +6,6 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -71,5 +69,8 @@ public class User implements Serializable {
 	private List<Bank> banks;*/
 	/*@OneToMany
 	private List<Historical> historicals;*/
+	
+	@OneToMany(mappedBy="user" , cascade=CascadeType.MERGE)
+    private List<Search> search;
 
 }
