@@ -1,5 +1,9 @@
 package tn.dari.spring.service;
 
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +15,12 @@ public class CommentServiceImpl implements ICommentService{
 
 	@Autowired
 	CommentRepository cr;
+	
+	private static final Logger l = LogManager.getLogger(CommentServiceImpl.class);
+	
 	@Override
-	public void addComment(Comment c) {
-		cr.save(c);
+	public Comment addComment(Comment c) {
+		return cr.save(c);
 		
 	}
 
@@ -27,19 +34,27 @@ public class CommentServiceImpl implements ICommentService{
 		return false;
 		}
 	}
+	
 
 	@Override
 	public Comment updateComment(Comment c) {
-			
-			Comment exist =cr.findById(c.getId()).orElse(null);
-			
-			cr.findById(c.getId());
-			
-			exist.setDescription(c.getDescription());     
-		  
-		
-			return cr.save(exist) ;    
-		
+	return cr.save(c);
 		}
+	
+
+	@Override
+	public List<Comment> retrieveAllComment() {
+		List<Comment> comment = (List<Comment>) cr.findAll();
+		for(Comment comments : comment){
+			l.info("comments:" + comments);
+		}
+		return comment;
+	}
+
+	@Override
+	public Comment retrieveComment(Long id) {
+		return cr.findById(id).get();
+	}
+
 
 }

@@ -1,12 +1,16 @@
 package tn.dari.spring.service;
 
-import tn.dari.spring.entity.Comment;
+import java.util.List;
+
 import tn.dari.spring.entity.Search;
 
 public interface ISearchService {
 	
-	void addSearch(Search s);
+	Search addSearch(Search s);
 	boolean deleteSearch(long id);
 	Search updateSearch(Search s);
+	List<Search> retrieveAllSearch();
+	Search retrieveSearch(Long id);
+	
 
 }

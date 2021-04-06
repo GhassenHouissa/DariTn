@@ -22,14 +22,14 @@ public class OrdersServiceImplTest {
 	
 	@Test
 	public void addOrdersTest(){
-		Orders o = new Orders();
+		Orders o = new Orders(1,(float)300000000);
 		
 		os.addOrders(o);
 	}
 	
 	@Test
 	public void deleteOrdersTest(){
-		l.info("Orders deleted : "+ os.deleteOrders(2));
+		l.info("Orders deleted : "+ os.deleteOrders(8));
 		
 	}
 

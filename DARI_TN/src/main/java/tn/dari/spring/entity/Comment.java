@@ -8,71 +8,58 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+
 @Entity
 public class Comment implements Serializable {
-	
+
+	public static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id ;
+	private Long id;
 
 	
-   private String description ;
+	private String description;
 
-	
-	
 	@ManyToOne
-	private Ads ads_comment ;
-	
-	@ManyToOne
-	private Customer customer_comment ;
+	private Ads ads_comment;
 
-   
-	//constructeur par défaut
+	@ManyToOne
+	private Customer customer_comment;
+
+	// constructeur par défaut
 	public Comment() {
 		super();
-	
+
 	}
 
-
-	 //constructeur parametré
+//	// constructeur parametré
 	public Comment(Long id, String description) {
 		super();
 		this.id = id;
-		this.description = description;
+	    this.description = description;
 	}
-	
-	
 
-
-	
 	public Comment(String description) {
 		super();
 		this.description = description;
 	}
 
-
-	//getters&setters
+	// getters&setters
 	public Long getId() {
 		return id;
 	}
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
 
-
 	public void setDescription(String description) {
 		this.description = description;
-	} 
-	
-	
-	
-	
-	
+	}
+
 }

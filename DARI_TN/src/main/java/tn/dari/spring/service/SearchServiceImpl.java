@@ -1,15 +1,15 @@
 package tn.dari.spring.service;
 
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.dari.spring.entity.Comment;
 import tn.dari.spring.entity.Search;
 import tn.dari.spring.repository.SearchRepository;
-import tn.dari.spring.servicetest.SearchServiceImplTest;
 
 @Service
 public class SearchServiceImpl implements ISearchService {
@@ -18,9 +18,12 @@ public class SearchServiceImpl implements ISearchService {
     
 	@Autowired
 	SearchRepository sr;
+	
+	private static final Logger l = LogManager.getLogger(SearchServiceImpl.class);
+	
 	@Override
-	public void addSearch(Search s) {
-		sr.save(s);
+	public Search addSearch(Search s) {
+		return sr.save(s);
 		
 	}
 	@Override
@@ -48,6 +51,18 @@ public class SearchServiceImpl implements ISearchService {
 	  
 	
 		return sr.save(exist) ;  
+	}
+	@Override
+	public List<Search> retrieveAllSearch() {
+		List<Search> search = (List<Search>) sr.findAll();
+		for(Search searchs : search){
+			l.info("searchs:" + searchs);
+		}
+		return search;
+	}
+	@Override
+	public Search retrieveSearch(Long id) {
+		return sr.findById(id).get();
 	}
 
 }

@@ -8,7 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 @Entity
+@JsonIgnoreProperties
 public class Search implements Serializable {
  
 	/**
@@ -26,6 +31,7 @@ public class Search implements Serializable {
 
 	
 	@ManyToOne
+	@JsonIgnore
 	private Customer customer_search ;
 
     //Constructeur par défaut

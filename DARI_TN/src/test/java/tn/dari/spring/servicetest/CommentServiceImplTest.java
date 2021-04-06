@@ -28,14 +28,14 @@ public class CommentServiceImplTest {
 	
 	@Test
 	public void addCommentTest(){
-		Comment c = new Comment("wiem aaaaaa");
+		Comment c = new Comment("est il encore disponible ???");
 		cs.addComment(c);
 		
 	}
 	
 	@Test
 	public void deleteCommentTest(){
-		l.info("comment deleted: "+ cs.deleteComment(2));
+		l.info("comment deleted: "+ cs.deleteComment(8));
 		 
 		
 	}
@@ -43,7 +43,7 @@ public class CommentServiceImplTest {
 	@Test 
 	public void testupdateComment(){                        
 	Comment c = cr.findById((long) 3).get(); 
-	c.setDescription("aaaaaabbbb");
+	c.setDescription("je suis intéressé!");
 	cs.addComment(c);
 		
 	}

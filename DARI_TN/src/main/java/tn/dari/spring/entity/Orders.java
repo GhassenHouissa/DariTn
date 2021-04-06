@@ -21,10 +21,7 @@ public class Orders implements Serializable {
 	@ManyToOne
 	private Customer customer_orders ;
 
-	public Orders() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	//constructeur parametrés
 	public Orders(Long id, int number, Float price) {
@@ -33,8 +30,27 @@ public class Orders implements Serializable {
 		this.number = number;
 		this.price = price;
 	}
+	
+	
 
 	
+	public Orders(int number, Float price) {
+		super();
+		this.number = number;
+		this.price = price;
+	}
+
+
+
+
+	public Orders() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 	//getters&setters
 	public Long getId() {
 		return id;

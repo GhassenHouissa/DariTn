@@ -30,10 +30,10 @@ private int nbRooms4 ;
 private int roomArea4;
 private String composition4;
 
-private boolean add=false ;
+//private boolean add=false ;  
 
 
-@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
+@OneToMany(cascade = CascadeType.ALL, mappedBy="ads") 
 private Set<Favorites> favorites;
 
 /*@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")

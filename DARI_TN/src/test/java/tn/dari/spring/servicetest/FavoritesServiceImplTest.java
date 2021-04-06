@@ -1,5 +1,9 @@
 package tn.dari.spring.servicetest;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -21,15 +25,18 @@ public class FavoritesServiceImplTest {
 	IFavoritesService fs ;
 	
 	@Test
-	public void addFavoritesTest(){
-		Favorites f = new Favorites();
+	public void addFavoritesTest() throws ParseException{
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = dateFormat.parse("2021-04-8");
+		Favorites f = new Favorites(date,12);
 		
 		fs.addFavorites(f);
 	}
 	
 	@Test
 	public void deleteFavoritesTest(){
-		l.info("favorites deleted : "+ fs.deleteFavorites(2));
+		l.info("favorites deleted : "+ fs.deleteFavorites(3));
 		
 	}
 
