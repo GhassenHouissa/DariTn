@@ -3,6 +3,7 @@ package tn.dari.spring.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,8 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import net.bytebuddy.description.modifier.EnumerationState;
-
 @Entity
 @Table(name = "T_USER")
 public class User implements Serializable {
@@ -21,10 +20,70 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long Id;
-	private String FirstName;
-	private String LastName;
-	private String Email;
+	@Column
+	private String firstName;
+	@Column
+	private String lastName;
+	@Column
+	private String email;
+	@Column
+	private String login;
+	@Column
+	private String password;
+
+
+	@Enumerated(EnumType.STRING)
+	private Role role;
+
+	public User( ) {
+		
+	}
+	 
+	 
+	
+	/**
+	 * @param id
+	 * @param firstName
+	 * @param lastName
+	 * @param email
+	 * @param login
+	 * @param password
+	 * @param role
+	 */
+	public User(Long id, String firstName, String lastName, String email, String login, String password, Role role) {
+		super();
+		Id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.login = login;
+		this.password = password;
+		this.role = role;
+	}
+
+
+
+	@OneToMany
+	private List<Claim> claims;
+	@OneToMany
+	private List<Visit> visits;
+//			private List<Favorites> favorites;
+	@OneToMany
+	private List<Bank> banks;
+//			@OneToMany
+//			private List<Historical>historicals;
+	@OneToMany
+	private List<Search> searchs;
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
 
 	public Long getId() {
 		return Id;
@@ -35,38 +94,50 @@ public class User implements Serializable {
 	}
 
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
-	@OneToMany
-	private List<Claim> claims;
-	@OneToMany
-	private List<Visit> visits;
-	@OneToMany
-	private List<Favorites> favorites;
-	@OneToMany
-	private List<Bank> banks;
-	@OneToMany
-	private List<Historical> historicals;
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+//	public List<Favorites> getFavorites() {
+//			return favorites;
+//		}
+//		public void setFavorites(List<Favorites> favorites) {
+//			this.favorites = favorites;
+//		}
 
 }
