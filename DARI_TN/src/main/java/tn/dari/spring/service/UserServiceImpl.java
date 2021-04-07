@@ -53,8 +53,8 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	@Override
-	public User retrieveUserByLogin(String login) {
-		User user = userRepository.findUserByLogin(login);
+	public User retrieveUserByLoginOrEmail(String login) {
+		User user = userRepository.findUserByLoginOrEmail(login);
 		return user;
 	}
 	
@@ -63,10 +63,6 @@ public class UserServiceImpl implements UserService {
 		List<User> users = userRepository.findUserByID(id);
 		return users;
 	}
-	 	@Override
-	public User retrieveUserByEmail(String email) {
-		User user = userRepository.findUserByemail(email);
-		return user;
-	}
+
 	
 }

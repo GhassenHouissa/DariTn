@@ -12,8 +12,8 @@ import tn.dari.spring.entity.User;
 @Repository
 public interface UserRepository extends CrudRepository<User ,Long>  {
 
-	@Query("FROM User u WHERE u.login = :login")
-	User findUserByLogin(@Param(value = "login") String login);
+	@Query("FROM User u WHERE u.login = :login or u.email = :login")
+	User findUserByLoginOrEmail(@Param(value = "login") String login);
 	
 	@Query("FROM User u WHERE u.id = :id")
 	List<User> findUserByID(@Param(value = "id") Long id);

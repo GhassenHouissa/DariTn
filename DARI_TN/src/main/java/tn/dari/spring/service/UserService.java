@@ -14,7 +14,6 @@ public interface UserService {
 	void deleteUser (Long id);
 	User updateUser(User u);
 	User retrieveUser(Long id);
-	User retrieveUserByLogin(String login);
-	User retrieveUserByEmail(String email);
+	User retrieveUserByLoginOrEmail(String login);
 	List<User> retrieveUserById(Long id);
 }
