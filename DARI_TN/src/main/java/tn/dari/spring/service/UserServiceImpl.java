@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import tn.dari.spring.entity.User;
@@ -15,6 +17,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	
 	@Override
 	public List<User> retrieveAllUsers() {
 		List<User> useres = (List<User>) userRepository.findAll();
@@ -23,6 +26,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User addUser(User u) {
+		u.setPassword(new BCryptPasswordEncoder().encode(u.getPassword()));
 		User user =userRepository.save(u);
 		return user;
 	}
@@ -59,4 +63,10 @@ public class UserServiceImpl implements UserService {
 		List<User> users = userRepository.findUserByID(id);
 		return users;
 	}
+	 	@Override
+	public User retrieveUserByEmail(String email) {
+		User user = userRepository.findUserByemail(email);
+		return user;
+	}
+	
 }

@@ -52,9 +52,14 @@ public class UserRestController {
 		userService.deleteUser(userId);
 	}
 	 
-	@GetMapping("/retrieve-user/{login}")
+	@GetMapping("/retrieveUserByLogin/{login}")
 	@ResponseBody
 	public User retrieveUserByLogin (@PathVariable("login") String login) {
 		return userService.retrieveUserByLogin(login);
+	}
+	@GetMapping("/retrieveUserByEmail/{email}")
+	@ResponseBody
+	public User retrieveUserByEmail (@PathVariable("email") String email) {
+		return userService.retrieveUserByEmail(email);
 	}
 }

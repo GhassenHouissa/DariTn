@@ -15,5 +15,6 @@ public interface UserService {
 	User updateUser(User u);
 	User retrieveUser(Long id);
 	User retrieveUserByLogin(String login);
+	User retrieveUserByEmail(String email);
 	List<User> retrieveUserById(Long id);
 }

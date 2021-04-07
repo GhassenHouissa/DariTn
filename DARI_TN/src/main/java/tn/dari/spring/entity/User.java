@@ -65,6 +65,12 @@ public class User implements Serializable {
 
 
 
+	public User(String login) {
+		this.login = login;
+	}
+
+
+
 	@OneToMany
 	private List<Claim> claims;
 	@OneToMany

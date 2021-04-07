@@ -14,5 +14,7 @@ public class Visit {
 	
 	@ManyToOne
 	User user;
+	@ManyToOne
+	Ads ads;
 
 }
