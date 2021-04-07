@@ -1,15 +1,17 @@
-//package tn.dari.spring.service;
-//import java.util.List;
+package tn.dari.spring.service;
+import java.util.List;
 
-//import tn.dari.spring.entity.Contract;
 
-//public interface  InsuranceService {
-	//public  Insurance add Insurance( Insurance i);
-	//public List< Insurance> retrieveInsurances();
-	//public void delete Insurance(Long id);
-	//public static void updateInsurance( Insurance i) {
-		// TODO Auto-generated method stub
-		
-	//}
+import org.springframework.stereotype.Repository;
 
-//}
+import tn.dari.spring.entity.Insurance;
+@Repository
+public interface  InsuranceService {
+	public  Insurance addInsurance( Insurance i);
+	public List<Insurance> retrieveInsurances();
+	public Insurance retrieveInsuranceById(Long id);
+	public void deleteInsurance(Long id);
+	public Insurance  updateInsurance(Insurance i) ;
+	
+	Insurance retrieveUserById(Long id);
+	}

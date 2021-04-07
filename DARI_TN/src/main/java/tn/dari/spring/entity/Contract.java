@@ -2,6 +2,7 @@ package tn.dari.spring.entity;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "Contract")
 public class Contract implements Serializable {
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public Contract() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -28,7 +34,7 @@ public class Contract implements Serializable {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="Contract_ID")
+	@Column(name="Contract_Id")
 	private Long id; 
 
 	@Column(name="Contract_Type")
@@ -53,13 +59,6 @@ public class Contract implements Serializable {
 		this.type = type;
 	}
 
-	public Contract(Long id, String type, tn.dari.spring.entity.Subscription subscription) {
-		super();
-		this.id = id;
-		this.type = type;
-		Subscription = subscription;
-	}
-
 	public Subscription getSubscription() {
 		return Subscription;
 	}
@@ -67,5 +66,7 @@ public class Contract implements Serializable {
 	public void setSubscription(Subscription subscription) {
 		Subscription = subscription;
 	}
+
+
 
 }

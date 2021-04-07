@@ -2,6 +2,8 @@ package tn.dari.spring.entity;
 
 import java.io.Serializable;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,10 +12,26 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "Insurance")
 
 public class Insurance implements Serializable {
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public Insurance() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Insurance(Long id, String type) {
+		super();
+		this.id = id;
+		this.type = type;
+	}
 
 private static final long serialVersionUID = 1L;
 @Id
@@ -52,3 +70,34 @@ public void setSubscription(Subscription subscription) {
 }
 
 }
+
+//public Insurance(Subscription subscription, Date creationDate, Date expirationDate, Float price) 
+//{
+//	super();
+//	this.Subscription=subscription;
+//	this.creationDate = creationDate;
+//	this.expirationDate = expirationDate;
+//	this.price = price;
+//}
+//
+//
+//@Id
+//@GeneratedValue (strategy = GenerationType.IDENTITY)
+//@Column(name="ID")
+//private int id; 
+//
+//@Autowired
+//@Temporal(TemporalType.DATE)
+//private Date creationDate;
+//
+//@Temporal(TemporalType.DATE)
+//private Date expirationDate;
+//
+//@Column(name="PRICE")
+//private float price;
+//
+//
+//@OneToOne
+//private Subscription Subscription;
+//}
+
