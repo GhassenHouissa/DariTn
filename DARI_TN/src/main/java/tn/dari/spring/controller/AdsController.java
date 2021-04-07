@@ -9,6 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,6 +23,7 @@ import tn.dari.spring.service.AdsService;
 import tn.dari.spring.service.AdsServiceImp;
 @RestController
 public class AdsController implements AdsService {
+	private static String UPLOAD8_DIR=System.getProperty("user.home")+"/test";
 	@Autowired
 	AdsServiceImp adsServiceImp;
 	@Autowired
@@ -72,10 +74,26 @@ public void uploadFile(@RequestParam ("file") MultipartFile file) throws Illegal
 	public void uploadPhoto(MultipartFile file, @PathVariable Long id) throws Exception {
 	Ads a = adsInterface.findById(id).get();
 	a.setMedia(id+".png");
-	Files.write(Paths.get(System.getProperty("user.home")+"/mediaAds/products"+a.getMedia()),file.getBytes());
+	Files.write(Paths.get(System.getProperty("user.home")+"/AdsMedia/products"+a.getMedia()),file.getBytes());
 	adsInterface.save(a);
 	}*/
-	
+	/*@PostMapping("/rest/uploadMultiFiles")
+    public ResponseEntity<?> uploadFileMulti(@ModelAttribute UploadForm form) throws Exception {
+ 
+        System.out.println("Description:" + form.getDescription());
+ 
+        String result = null;
+        try {
+ 
+            result = this.saveUploadedFiles(form.getFiles());
+ 
+        }
+        // Here Catch IOException only.
+        // Other Exceptions catch by RestGlobalExceptionHandler class.
+        catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+        }*/
 	
 	
 	

@@ -44,10 +44,6 @@ public Ads retrieveById(@PathVariable(name="id") Long id) {
 	return null;
 }
 
-/*@RequestMapping(path="/test")
-public void uploadFile (MultipartFile file) throws IllegalStateException, IOException {
-file.transferTo(new File("C:\\Users\\Lenevo\\mediaAds\\"+file.getOriginalFilename()));
-}*/
 
 }
 

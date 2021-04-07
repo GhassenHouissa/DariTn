@@ -25,33 +25,33 @@ public class Ads implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id4;
-	@Column(name="TITLE", length=25)
+	@Column(name="TITLE", length=25, nullable=false)
 	private String title4;
-	@Column(name="DESCRIPTION", length=70)
+	@Column(name="DESCRIPTION", length=70, nullable=true)
 	private String description4;
 	@Column(name="LOCATION")
 	@Enumerated(EnumType.STRING)
 	private Location location4;
-	@Column(name="CATEGORY")
+	@Column(name="CATEGORY", nullable=false)
 	@Enumerated(EnumType.STRING)
 	private Category category4;
-	@Column(name="TRANSACTION")
+	@Column(name="TRANSACTION", nullable=false)
 	@Enumerated(EnumType.STRING)
 	private Transaction transaction4 ;
-	@Column(name="ROOM")
+	@Column(name="ROOM", nullable=false)
 	private int nbRoom4;
-	@Column(name="KITCHEN")
+	@Column(name="KITCHEN", nullable=true)
 	private int nbKitchen4;
-	@Column(name="BATHROOM")
+	@Column(name="BATHROOM", nullable=false)
 	private int nbBathRoom4;
-	@Column(name="FLOOR")
+	@Column(name="FLOOR", nullable=true)
 	private int nbFloor4;
-	@Column(name="AREA")
+	@Column(name="AREA", nullable=false)
 	private int area4;
-	@Column(name="PRICE")
+	@Column(name="PRICE", nullable=false)
 	private double price4;
-	@Column(name="MEDIA", length = 1200)
-	private MultipartFile[] media;
+	@Column(name="MEDIA", length = 1200, nullable=true)
+	private String media;
 	/*@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
 private Set<Favorites> favorites;
 
