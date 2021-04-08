@@ -4,6 +4,8 @@ package tn.dari.spring.control;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.dari.spring.entity.Notification;
 import tn.dari.spring.service.INotificationService;
+import tn.dari.spring.service.NotificationDispatcher;
+
 
 
 @RestController
@@ -72,4 +76,31 @@ public class NotificationRestControl {
 				public Notification retrieveNotification(@PathVariable("notifications-id") Long id) {
 				return notificationService.retrieveNotification(id);           
 				}
+				
+				
+				
+				
+				
+				//***$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$***************
+				
+				private final NotificationDispatcher dispatcher;
+
+			    @Autowired
+			    public  NotificationRestControl(NotificationDispatcher dispatcher) {
+			        this.dispatcher = dispatcher;
+			    }
+
+			    // http://localhost:8081/springMVC/servlet/start
+			    
+			    @MessageMapping("/start")
+			    public void start(StompHeaderAccessor stompHeaderAccessor) {
+			        dispatcher.add(stompHeaderAccessor.getSessionId());
+			    }
+			    
+			 // http://localhost:8081/springMVC/servlet/stop
+
+			    @MessageMapping("/stop")
+			    public void stop(StompHeaderAccessor stompHeaderAccessor) {
+			        dispatcher.remove(stompHeaderAccessor.getSessionId());
+			    }
 }

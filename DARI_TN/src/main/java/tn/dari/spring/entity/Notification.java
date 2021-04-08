@@ -20,6 +20,8 @@ public class Notification implements Serializable {
 	
 	@Temporal(TemporalType.DATE)
 	private Date date ;
+	
+	public String text;
 
 
 	@ManyToOne
@@ -34,6 +36,9 @@ public class Notification implements Serializable {
 
 
 	//constructeur parametrés
+	public Notification(String text) {
+        this.text = text;
+    }
 
 
 	public Notification(Long id, Date date) {

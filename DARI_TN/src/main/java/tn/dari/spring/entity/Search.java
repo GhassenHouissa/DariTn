@@ -40,6 +40,7 @@ public class Search implements Serializable {
 		super();
 		
 	}
+	
 
 	
 	//constructeur parametrés 
@@ -58,6 +59,14 @@ public class Search implements Serializable {
 	
 
 	
+
+	public Search(Long id, String location) {
+		super();
+		this.id = id;
+		this.location = location;
+	}
+
+
 
 	public Search(String type, String location, Float price, Long nbr, User user) {
 		super();

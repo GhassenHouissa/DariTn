@@ -28,7 +28,7 @@ private String location;
 private Long area;
 private int nbRooms4 ;
 private int roomArea4;
-private String composition4;
+private String composition;
 
 //private boolean add=false ;  
 
@@ -60,7 +60,7 @@ public Ads(
 		Long area4, 
 		int nbRooms4, 
 		int roomArea4,
-		String composition4
+		String composition
 		) 
 {
 	super();
@@ -70,7 +70,7 @@ public Ads(
 	this.area = area4;
 	this.nbRooms4 = nbRooms4;
 	this.roomArea4 = roomArea4;
-	this.composition4 = composition4;
+	this.composition = composition;
 }
 //***********************//
 
@@ -112,10 +112,10 @@ public void setRoom_area4(int room_area4) {
 	this.roomArea4 = room_area4;
 }
 public String getComposition4() {
-	return composition4;
+	return composition;
 }
 public void setComposition4(String composition4) {
-	this.composition4 = composition4;
+	this.composition = composition4;
 }
 //****************************************************//
 }
