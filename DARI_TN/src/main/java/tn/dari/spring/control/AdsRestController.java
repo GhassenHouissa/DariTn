@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.entity.Search;
 import tn.dari.spring.repository.Ads_interface;
 import tn.dari.spring.repository.SearchRepository;
+import tn.dari.spring.service.Ads_service;
 
 @RestController
 public class AdsRestController {
@@ -20,10 +22,25 @@ public class AdsRestController {
 	Ads_interface adsInterface;
 	
 	@Autowired
+	Ads_service as;
+	
+	@Autowired
 	SearchRepository repop;
 	
 	@Autowired
 	Ads_interface repo;
+	
+	
+	
+	
+	
+	//http://localhost:8082/DARITN/servlet/show-all-ads
+		@GetMapping("/show-all-ads")
+		@ResponseBody
+		public List<Ads> getAllAds(){
+			List <Ads> list= as.showAll(); 
+			return list;
+		}
 	
 	//*********************************************
 	//   http://localhost:8082/DARITN/servlet/lis/{area}

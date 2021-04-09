@@ -23,4 +23,7 @@ public interface Ads_interface extends CrudRepository<Ads, Long> ,JpaRepository<
 	@Query(value = "SELECT * FROM D_annonce  where location=?1 and composition=?1 " , nativeQuery = true)
     List <Ads> findAdsByLocationOrComposition(@Param("location")String location, @Param("composition")String composition);
 	
+	
+	
+	
 }
