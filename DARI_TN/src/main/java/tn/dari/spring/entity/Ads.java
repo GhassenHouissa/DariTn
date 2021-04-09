@@ -22,12 +22,12 @@ public class Ads implements Serializable  {
 	private static final long serialVersionUID = 1L;
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
-private Long idAds4;
-private String content4;
+private Long idAds;
+private String content;
 private String location;
 private Long area;
-private int nbRooms4 ;
-private int roomArea4;
+private int nbRooms ;
+private int roomArea;
 private String composition;
 
 //private boolean add=false ;  
@@ -54,38 +54,38 @@ public Ads() {
 //***********************//
 //constructeur parametré//
 public Ads(
-		Long idAds4, 
-		String content4, 
-		String location4, 
-		Long area4, 
-		int nbRooms4, 
-		int roomArea4,
+		Long idAds, 
+		String content, 
+		String location, 
+		Long area, 
+		int nbRooms, 
+		int roomArea,
 		String composition
 		) 
 {
 	super();
-	this.idAds4 = idAds4;
-	this.content4 = content4;
-	this.location = location4;
-	this.area = area4;
-	this.nbRooms4 = nbRooms4;
-	this.roomArea4 = roomArea4;
+	this.idAds = idAds;
+	this.content = content;
+	this.location = location;
+	this.area = area;
+	this.nbRooms = nbRooms;
+	this.roomArea= roomArea;
 	this.composition = composition;
 }
 //***********************//
 
 //***********Getters & Setters***********//
-public Long getIdAds4() {
-	return idAds4;
+public Long getIdAds() {
+	return idAds;
 }
-public void setIdAds4(long id_ads4) {
-	this.idAds4 = id_ads4;
+public void setIdAds4(long id_ads) {
+	this.idAds = id_ads;
 }
-public String getContent4() {
-	return content4;
+public String getContent() {
+	return content;
 }
-public void setContent4(String content4) {
-	this.content4 = content4;
+public void setContent(String content) {
+	this.content = content;
 }
 public String getLocation() {
 	return location;
@@ -93,29 +93,29 @@ public String getLocation() {
 public void setLocation4(String location4) {
 	this.location= location;
 }
-public Long getArea4() {
+public Long getArea() {
 	return area;
 }
-public void setArea4(long area4) {
+public void setArea(long area) {
 	this.area = area;
 }
-public int getNb_rooms4() {
-	return nbRooms4;
+public int getNb_rooms() {
+	return nbRooms;
 }
-public void setNb_rooms4(int nb_rooms4) {
-	this.nbRooms4 = nb_rooms4;
+public void setNb_rooms4(int nb_rooms) {
+	this.nbRooms = nb_rooms;
 }
-public int getRoom_area4() {
-	return roomArea4;
+public int getRoom_area() {
+	return roomArea;
 }
-public void setRoom_area4(int room_area4) {
-	this.roomArea4 = room_area4;
+public void setRoom_area(int room_area) {
+	this.roomArea = room_area;
 }
-public String getComposition4() {
+public String getComposition() {
 	return composition;
 }
-public void setComposition4(String composition4) {
-	this.composition = composition4;
+public void setComposition(String composition) {
+	this.composition = composition;
 }
 //****************************************************//
 }

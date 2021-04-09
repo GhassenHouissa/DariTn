@@ -7,14 +7,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
 import tn.dari.spring.service.FileUploadService;
+
+
 
 @RestController
 public class FileUploadController {
 	
 	@Autowired
 	FileUploadService fileUploadService;
+	
 	
 	//http://localhost:8082/DARITN/servlet/uploadfile
 	

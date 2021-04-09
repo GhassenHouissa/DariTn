@@ -36,13 +36,26 @@ public class AdsRestController {
 		return repo.findAdsByArea(area) ;
 }
 
+//http://localhost:8082/DARITN/servlet/con/{content}
+
+@GetMapping("con/{content}")
+public List<Ads> searchbyContent(@PathVariable(name="content") String content){
+	/*Search search = new Search(content) ;
+	repop.save(search);*/
+	return repo.findAdsByContent(content) ;
+}
+
+
+
+
+
 //http://localhost:8082/DARITN/servlet/loc/{location}
 	
 	@GetMapping("loc/{location}")
 	 public List<Ads> searchbyLocationOrComposition(@PathVariable(name="location") String location,String composition){
 			/*Search search = new Search(location) ;
 			repop.save(search);*/
-			return repo.findUserByLocationOrComposition(location, composition) ;
+			return repo.findAdsByLocationOrComposition(location, composition) ;
 	 }
 
 
