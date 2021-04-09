@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.dari.spring.entity.Role;
 import tn.dari.spring.entity.User;
 import tn.dari.spring.service.UserService;
 
@@ -62,6 +63,16 @@ public class UserRestController {
 	public Long countUser() {
 		Long countUser= userService.countUser() ;
 		return countUser;
+	}
+ 
+	@GetMapping("/countUserByRole/{role}")	
+	@ResponseBody
+	public int countUserByRole(@PathVariable("role") String role) {
+		
+		System.out.println(Role.valueOf(role));
+		System.out.println(Role.valueOf("Customer"));
+		int countUserByRole= userService.findUserByRole(Role.valueOf(role));
+		return countUserByRole;
 	}
  
 }

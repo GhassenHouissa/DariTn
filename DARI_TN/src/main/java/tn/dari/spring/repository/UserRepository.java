@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import tn.dari.spring.entity.Role;
 import tn.dari.spring.entity.User;
 
 @Repository
@@ -22,6 +23,8 @@ public interface UserRepository extends CrudRepository<User ,Long>  {
 	User findUserByemail(@Param(value = "email") String email);
 
 
+	@Query("FROM User u WHERE u.role = :role")
+	 List<User> findUserByRole(@Param(value = "role") Role role);
 	
 }
 

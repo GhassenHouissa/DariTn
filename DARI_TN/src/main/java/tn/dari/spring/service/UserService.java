@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import tn.dari.spring.entity.Role;
 import tn.dari.spring.entity.User;
 
 @Repository
@@ -17,4 +18,5 @@ public interface UserService {
 	User retrieveUserByLoginOrEmail(String login);
 	List<User> retrieveUserById(Long id);
 	Long countUser();
+	int findUserByRole(Role role);
 }

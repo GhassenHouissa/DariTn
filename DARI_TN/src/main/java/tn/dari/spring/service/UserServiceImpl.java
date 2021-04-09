@@ -8,6 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import tn.dari.spring.entity.Role;
 import tn.dari.spring.entity.User;
 import tn.dari.spring.repository.UserRepository;
 
@@ -67,5 +68,13 @@ public class UserServiceImpl implements UserService {
 	public Long countUser() {
         return userRepository.count();
     }
+	
+	@Override
+	public int findUserByRole(Role role) {
+		 List<User>listUserByRole =  userRepository.findUserByRole(role);
+		 int countUserByRole =  listUserByRole.size();
+		return countUserByRole;
+	}
+
 	
 }
