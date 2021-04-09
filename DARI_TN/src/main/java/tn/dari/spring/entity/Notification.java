@@ -22,6 +22,10 @@ public class Notification implements Serializable {
 	private Date date ;
 	
 	public String text;
+	
+	private int sender;
+	
+	private int receiver;
 
 
 	@ManyToOne
@@ -76,6 +80,44 @@ public class Notification implements Serializable {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+
+	public String getText() {
+		return text;
+	}
+
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+
+	public int getSender() {
+		return sender;
+	}
+
+
+	public void setSender(int sender) {
+		this.sender = sender;
+	}
+
+
+	public int getReceiver() {
+		return receiver;
+	}
+
+
+	public void setReceiver(int receiver) {
+		this.receiver = receiver;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Notification [id=" + id + ", date=" + date + ", text=" + text + ", sender=" + sender + ", receiver="
+				+ receiver + ", customer_notif=" + customer_notif + "]";
+	}
+	
 	
 	
 	

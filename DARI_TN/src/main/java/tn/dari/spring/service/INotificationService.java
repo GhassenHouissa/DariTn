@@ -4,6 +4,7 @@ import java.util.List;
 
 import tn.dari.spring.entity.Notification;
 
+
 public interface INotificationService {
 	
 	boolean deleteNotification(long id);
@@ -11,5 +12,7 @@ public interface INotificationService {
 	Notification addNotification(Notification n);
 	Notification retrieveNotification(long id);
 	Notification updateNotification( Notification n);
+	
+
 
 }

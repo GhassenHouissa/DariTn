@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +27,9 @@ public class User implements Serializable {
 	private String FirstName;
 	private String LastName;
 	private String Email;
+	
+	@Enumerated(EnumType.STRING)
+	private Role role ;
 
 	public Long getId() {
 		return Id;
@@ -58,6 +63,18 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		Email = email;
 	}
+	
+	
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+
 
 	@OneToMany
 	private List<Claim> claims;
