@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.dari.spring.entity.Role;
 import tn.dari.spring.entity.User;
 import tn.dari.spring.service.UserService;
 
@@ -19,6 +20,7 @@ import tn.dari.spring.service.UserService;
 public class UserRestController {
 	@Autowired
 	UserService userService;
+	
 	@GetMapping("/retrieve-all-users")	
 	@ResponseBody
 	public List<User> getUsers(){
@@ -42,8 +44,6 @@ public class UserRestController {
 	@ResponseBody
 	public User modifyUser(@RequestBody User user) {
 		return userService.updateUser(user);
-				
-				
 	}
  
 	@DeleteMapping("/remove-user/{user-id}")
@@ -52,9 +52,27 @@ public class UserRestController {
 		userService.deleteUser(userId);
 	}
 	 
-	@GetMapping("/retrieve-user/{login}")
+	@GetMapping("/retrieveUserByLogin/{login}")
 	@ResponseBody
 	public User retrieveUserByLogin (@PathVariable("login") String login) {
-		return userService.retrieveUserByLogin(login);
+		return userService.retrieveUserByLoginOrEmail(login);
 	}
+	
+	@GetMapping("/numberOfUsers")	
+	@ResponseBody
+	public Long countUser() {
+		Long countUser= userService.countUser() ;
+		return countUser;
+	}
+ 
+	@GetMapping("/countUserByRole/{role}")	
+	@ResponseBody
+	public int countUserByRole(@PathVariable("role") String role) {
+		
+		System.out.println(Role.valueOf(role));
+		System.out.println(Role.valueOf("Customer"));
+		int countUserByRole= userService.findUserByRole(Role.valueOf(role));
+		return countUserByRole;
+	}
+ 
 }

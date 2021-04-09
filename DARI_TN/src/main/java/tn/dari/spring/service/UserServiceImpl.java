@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import tn.dari.spring.entity.Role;
 import tn.dari.spring.entity.User;
 import tn.dari.spring.repository.UserRepository;
 
@@ -15,6 +18,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	
 	@Override
 	public List<User> retrieveAllUsers() {
 		List<User> useres = (List<User>) userRepository.findAll();
@@ -23,6 +27,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User addUser(User u) {
+		u.setPassword(new BCryptPasswordEncoder().encode(u.getPassword()));
 		User user =userRepository.save(u);
 		return user;
 	}
@@ -49,8 +54,8 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	@Override
-	public User retrieveUserByLogin(String login) {
-		User user = userRepository.findUserByLogin(login);
+	public User retrieveUserByLoginOrEmail(String login) {
+		User user = userRepository.findUserByLoginOrEmail(login);
 		return user;
 	}
 	
@@ -59,4 +64,17 @@ public class UserServiceImpl implements UserService {
 		List<User> users = userRepository.findUserByID(id);
 		return users;
 	}
+
+	public Long countUser() {
+        return userRepository.count();
+    }
+	
+	@Override
+	public int findUserByRole(Role role) {
+		 List<User>listUserByRole =  userRepository.findUserByRole(role);
+		 int countUserByRole =  listUserByRole.size();
+		return countUserByRole;
+	}
+
+	
 }
