@@ -19,6 +19,7 @@ import tn.dari.spring.service.UserService;
 public class UserRestController {
 	@Autowired
 	UserService userService;
+	
 	@GetMapping("/retrieve-all-users")	
 	@ResponseBody
 	public List<User> getUsers(){
@@ -42,8 +43,6 @@ public class UserRestController {
 	@ResponseBody
 	public User modifyUser(@RequestBody User user) {
 		return userService.updateUser(user);
-				
-				
 	}
  
 	@DeleteMapping("/remove-user/{user-id}")
@@ -57,5 +56,12 @@ public class UserRestController {
 	public User retrieveUserByLogin (@PathVariable("login") String login) {
 		return userService.retrieveUserByLoginOrEmail(login);
 	}
-
+	
+	@GetMapping("/numberOfUsers")	
+	@ResponseBody
+	public Long countUser() {
+		Long countUser= userService.countUser() ;
+		return countUser;
+	}
+ 
 }

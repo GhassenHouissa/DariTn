@@ -16,4 +16,5 @@ public interface UserService {
 	User retrieveUser(Long id);
 	User retrieveUserByLoginOrEmail(String login);
 	List<User> retrieveUserById(Long id);
+	Long countUser();
 }

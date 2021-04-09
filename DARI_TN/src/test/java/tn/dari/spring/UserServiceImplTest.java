@@ -77,7 +77,7 @@ public class UserServiceImplTest {
 	}
 	@Test
 	public void findUser() {
-		User user = u.retrieveUserByLogin("gaston");
+		User user = u.retrieveUserByLoginOrEmail("gaston");
 		assertEquals("gaston", user.getLogin());
 	}
 	
