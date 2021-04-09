@@ -12,6 +12,6 @@ import com.flickr4java.flickr.FlickrException;
 import tn.dari.spring.entity.Ads;
 
 public interface PhotoApi {
-@PostMapping(path="/photos/{id}")
-Ads savePhoto(Long id, @RequestPart("file") MultipartFile media, String titre) throws FlickrException, IOException ;
+
+	Ads savePhoto(Long id, @RequestPart("file") MultipartFile media, String titre) throws FlickrException, IOException ;
 }

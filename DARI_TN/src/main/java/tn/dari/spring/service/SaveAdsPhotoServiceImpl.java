@@ -5,6 +5,10 @@ import java.io.InputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.flickr4java.flickr.FlickrException;
 
@@ -20,9 +24,8 @@ public class SaveAdsPhotoServiceImpl implements SaveAdsPhotoService<Ads>{
 	private FlickrService flickrService;
 	@Autowired
 	private AdsService adsService;
-	
 	@Override
-	public Ads savePhoto(Long id, InputStream media, String titre) throws FlickrException {
+	public Ads savePhoto( Long id, InputStream media, String titre) throws FlickrException {
 		Ads ads= adsService.retrieveById(id);
 	String urlPhoto =flickrService.saveMedia(media, titre);
 	if(StringUtils.hasLength(urlPhoto)) {

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.repository.AdsRepository;
-@Service
+@Service(value="/test")
 public class AdsServiceImp implements AdsService{
 	@Autowired
 	private	AdsRepository adsInterface;
