@@ -9,4 +9,6 @@ public interface Ads_service {
 	Ads addAds(Ads a);
 	
 	public List<Ads> showAll();
+	
+	 Ads findbyid(long id);
 }

@@ -25,6 +25,9 @@ public Ads addAds(Ads a) {
 	return repository.save(a);
 }
 
+
+//wiem 
+
 @Override
 public List<Ads> showAll() {
 	List<Ads> adss =(List<Ads>) repository.findAll();
@@ -32,5 +35,10 @@ public List<Ads> showAll() {
 		L.info("Ads +++ :" + ads);
 	}
 	return adss;
+}
+
+@Override
+public Ads findbyid(long id) {
+	return repository.findById(id).get() ;
 }
 }

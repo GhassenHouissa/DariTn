@@ -17,15 +17,18 @@ public class Comment implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	
+	private String mot;
 
 	
 	private String description;
 
 	@ManyToOne
-	private Ads ads_comment;
+	private Ads ads;
 
 	@ManyToOne
-	private Customer customer_comment;
+	private User user;
 
 	// constructeur par défaut
 	public Comment() {
@@ -34,16 +37,40 @@ public class Comment implements Serializable {
 	}
 
 //	// constructeur parametré
-	public Comment(Long id, String description) {
+
+
+	
+
+	public Comment(Long id, String mot) {
+	super();
+	this.id = id;
+	this.mot = mot;
+}
+
+	public Comment(String mot) {
+	super();
+	this.mot = mot;
+}
+
+	public Comment(Long id, String mot, Ads ads, User user) {
 		super();
 		this.id = id;
-	    this.description = description;
+		this.mot = mot;
+		this.ads = ads;
+		this.user = user;
 	}
 
-	public Comment(String description) {
+	public Comment(String mot, Ads ads, User user) {
+	super();
+	this.mot = mot;
+	this.ads = ads;
+	this.user = user;
+}
+
+	/*public Comment(String description) {
 		super();
 		this.description = description;
-	}
+	}*/
 
 	// getters&setters
 	public Long getId() {
@@ -61,5 +88,31 @@ public class Comment implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public Ads getAds() {
+		return ads;
+	}
+
+	public void setAds(Ads ads) {
+		this.ads = ads;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String getMot() {
+		return mot;
+	}
+
+	public void setMot(String mot) {
+		this.mot = mot;
+	}
+	
+	
 
 }

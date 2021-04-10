@@ -9,14 +9,12 @@ import tn.dari.spring.entity.User;
 
 
 
+
 @Repository
 public interface SearchRepository extends CrudRepository<Search,Long> {
 
 	Search findByTypeAndUser(String t, User u);
 	
-	///list of subjects adeq to profile 
-		//
-		//
 
 	
 	

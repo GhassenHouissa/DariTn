@@ -89,5 +89,8 @@ public class User implements Serializable {
 	
 	@OneToMany(mappedBy="user" , cascade=CascadeType.MERGE)
     private List<Search> search;
+	
+	@OneToMany(mappedBy="user" , cascade=CascadeType.MERGE)
+    private List<Comment> comment;
 
 }

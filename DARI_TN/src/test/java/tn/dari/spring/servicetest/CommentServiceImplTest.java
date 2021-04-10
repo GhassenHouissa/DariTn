@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.dari.spring.entity.Comment;
 import tn.dari.spring.repository.CommentRepository;
+import tn.dari.spring.service.CommentServiceImpl;
 import tn.dari.spring.service.ICommentService;
 
 
@@ -26,12 +27,26 @@ public class CommentServiceImplTest {
 	@Autowired
 	CommentRepository cr;
 	
-	@Test
+	@Autowired
+	CommentServiceImpl comserv;
+	
+	/*@Test
 	public void addCommentTest(){
 		Comment c = new Comment("est il encore disponible ???");
 		cs.addComment(c);
 		
+	}*/
+	
+	
+	@Test
+	public void addCommentTest(){
+		Comment com=new Comment("hello ");
+		comserv.addComment(com,1,1);
+		
+		
 	}
+	
+	
 	
 	@Test
 	public void deleteCommentTest(){
@@ -44,7 +59,7 @@ public class CommentServiceImplTest {
 	public void testupdateComment(){                        
 	Comment c = cr.findById((long) 3).get(); 
 	c.setDescription("je suis intéressé!");
-	cs.addComment(c);
+	//cs.addComment(c);
 		
 	}
 

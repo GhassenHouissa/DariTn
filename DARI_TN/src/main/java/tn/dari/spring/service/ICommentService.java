@@ -6,11 +6,13 @@ import tn.dari.spring.entity.Comment;
 
 public interface ICommentService {
 	
-	Comment addComment(Comment c);
+	//Comment addComment(Comment c);
 	boolean deleteComment(long id);
 	Comment updateComment(Comment c);
 	List<Comment> retrieveAllComment();
 	Comment retrieveComment(Long id);
 	
+	
+	 String addComment(Comment com,long user_id,long ads_id) ;
 
 }

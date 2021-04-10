@@ -42,7 +42,7 @@ private Set<Visit> visits;*/
 @OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
 private Set<Product> products;
 
-@OneToMany(cascade = CascadeType.ALL, mappedBy="ads_comment")
+@OneToMany(cascade = CascadeType.ALL, mappedBy="ads")
 private Set<Comment> comment;
 
 

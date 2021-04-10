@@ -21,16 +21,33 @@ public class CommentRestControl {
 	@Autowired
 	ICommentService commentService;
 	
+	@Autowired
+	UserController uc;
+	
+	
+	
+	private String mot;
+	private long user_id;
+	
+	
+	// http://localhost:8082/DARITN/servlet/addComment         
+    @PostMapping("/addComment")
+    @ResponseBody
+    public void AddComment(@RequestBody long ads_id_ads) {
+    Comment u = new Comment(mot);
+    commentService.addComment(u,uc.findbyid(user_id).getId(),ads_id_ads);
+	}
+	
 	
 	
 //*****************************************add***************************************
 	// http://localhost:8082/DARITN/servlet/add-Comment         
-	            @PostMapping("/add-Comment")
+	           /* @PostMapping("/add-Comment")
 	            @ResponseBody
 				public Comment addComment(@RequestBody Comment c) {
 					Comment comment = commentService.addComment(c);     
 				return comment;
-				}
+				}*/
 	            
 	            
 	          

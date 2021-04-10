@@ -15,6 +15,11 @@ public class Orders implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private String reference;
+	private double total;
+	private double totalpaye;
+
+	
 	private int number ;
 	private Float price ;
 
@@ -32,8 +37,46 @@ public class Orders implements Serializable {
 	}
 	
 	
+	
 
 	
+	public Orders(String reference, double total, double totalpaye) {
+		super();
+		this.reference = reference;
+		this.total = total;
+		this.totalpaye = totalpaye;
+	}
+
+
+
+
+
+	public Orders(Long id, String reference, double total, double totalpaye) {
+		super();
+		this.id = id;
+		this.reference = reference;
+		this.total = total;
+		this.totalpaye = totalpaye;
+	}
+
+
+
+
+
+	public Orders(Long id, String reference, double total, double totalpaye, int number, Float price) {
+		super();
+		this.id = id;
+		this.reference = reference;
+		this.total = total;
+		this.totalpaye = totalpaye;
+		this.number = number;
+		this.price = price;
+	}
+
+
+
+
+
 	public Orders(int number, Float price) {
 		super();
 		this.number = number;
@@ -75,6 +118,50 @@ public class Orders implements Serializable {
 	public void setPrice(Float price) {
 		this.price = price;
 	}
+
+
+
+
+	public String getReference() {
+		return reference;
+	}
+
+
+
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
+
+
+
+	public double getTotal() {
+		return total;
+	}
+
+
+
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+
+
+
+	public double getTotalpaye() {
+		return totalpaye;
+	}
+
+
+
+
+	public void setTotalpaye(double totalpaye) {
+		this.totalpaye = totalpaye;
+	}
+	
+	
 	
 	
 
