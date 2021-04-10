@@ -1,10 +1,9 @@
 package tn.dari.spring.entity;
 
+import javax.persistence.ManyToOne;
+
 public class Notification {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-	}
 
 }
