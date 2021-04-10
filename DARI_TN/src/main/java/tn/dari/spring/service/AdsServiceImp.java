@@ -1,63 +1,53 @@
 package tn.dari.spring.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import tn.dari.spring.entity.Ads;
-import tn.dari.spring.repository.Ads_interface;
-@Service
-public class AdsServiceImp implements Ads_service{
+import tn.dari.spring.repository.AdsRepository;
+@Service(value="/test")
+public class AdsServiceImp implements AdsService{
 	@Autowired
-private	Ads_interface adsInterface;
-	
+	private	AdsRepository adsInterface;
+
 @Override
-public Ads addAds(Ads a) {
-	Ads ads = adsInterface.save(a);
-	return ads;
+public List<Ads> retrieveAll() {
+
+	return (List<Ads>) adsInterface.findAll();
+} 
+
+@Override
+public Ads addAds(@RequestBody Ads a) {
+	return adsInterface.save(a);
 }
 
 @Override
-public List<Ads> findAll() {
-	List<Ads> ads = (List<Ads>) adsInterface.findAll();	
-	return ads;
+public Ads updateAds(@PathVariable(name="id") Long id ,@RequestBody Ads a) {
+	a.setId4(id);
+	return adsInterface.save(a);
 }
 
 @Override
-public Ads updateAds(Ads a) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public void deleteAds(Long id) {
+public void deleteAds(@PathVariable(name="id") Long id) {
 	adsInterface.deleteById(id);	
 }
 
 @Override
-public Ads findById(Long id) {
+public Ads retrieveById(@PathVariable(name="id") Long id) {
 	Ads ads=adsInterface.findById(id).get();
-	if(ads==null)
+	if(ads!=null)
 		return ads;
 	return null;
 }
-
-@Override
-public List<Ads> findByTitleContains(String t) {
-	List<Ads> ads =  adsInterface.findByTitle4Contains(t);
-	if(ads==null) {
-		return null;}
-	return ads;
+//@Scheduled(cron = "0 0 */9 * * *")
+/* public void deleteNotSubscriberAds() {
+	 List<Ads> ads =ads.forEach(entity->adsInterface.delete(entity));
+ }*/
 
 }
 
-public List<Ads> findByTransaction(String l){
-	List<Ads> ads =  adsInterface.findByLocation4Contains(l);
-	return ads;
-}
-
-
-
-}
