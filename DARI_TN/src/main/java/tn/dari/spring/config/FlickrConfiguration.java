@@ -21,7 +21,7 @@ import com.github.scribejava.core.model.OAuth1RequestToken;
 import com.github.scribejava.core.oauth.OAuth10aService;
 //cette classe de config sera executée une seule fois pour envoyer le key
 //le class de configuration execute tous le beans qui existe dans cette classe @config..
-//@Configuration*/
+//@Configuration
 public class FlickrConfiguration {
 @Value("${flickr.apiKey}")
 private String apiKey;

@@ -4,6 +4,8 @@ import java.io.InputStream;
 
 import com.flickr4java.flickr.FlickrException;
 
-public interface SaveAdsPhotoService<T> {
-T savePhoto(Long id, InputStream media, String titre) throws FlickrException;
+import tn.dari.spring.entity.Ads;
+
+public interface SaveAdsPhotoService {
+Ads savePhoto(Long id, InputStream media, String titre) throws FlickrException;
 }

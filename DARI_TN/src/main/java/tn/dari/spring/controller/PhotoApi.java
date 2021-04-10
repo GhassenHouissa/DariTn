@@ -13,5 +13,5 @@ import tn.dari.spring.entity.Ads;
 
 public interface PhotoApi {
 
-	Ads savePhoto(Long id, @RequestPart("file") MultipartFile media, String titre) throws FlickrException, IOException ;
+	Ads savePhoto(Long id,  MultipartFile media) throws FlickrException, IOException ;
 }

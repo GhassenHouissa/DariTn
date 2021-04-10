@@ -18,14 +18,14 @@ import tn.dari.spring.repository.AdsRepository;
 
 @Service
 @Slf4j
-public class SaveAdsPhotoServiceImpl implements SaveAdsPhotoService<Ads>{
+public class SaveAdsPhotoServiceImpl implements SaveAdsPhotoService{
 
 	@Autowired
 	private FlickrService flickrService;
 	@Autowired
 	private AdsService adsService;
 	@Override
-	public Ads savePhoto( Long id, InputStream media, String titre) throws FlickrException {
+	public Ads savePhoto(@PathVariable(name="id") Long id, InputStream media, String titre) throws FlickrException {
 		Ads ads= adsService.retrieveById(id);
 	String urlPhoto =flickrService.saveMedia(media, titre);
 	if(StringUtils.hasLength(urlPhoto)) {
