@@ -3,6 +3,7 @@ package tn.dari.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,7 +44,10 @@ public Ads retrieveById(@PathVariable(name="id") Long id) {
 		return ads;
 	return null;
 }
-
+//@Scheduled(cron = "0 0 */9 * * *")
+/* public void deleteNotSubscriberAds() {
+	 List<Ads> ads =ads.forEach(entity->adsInterface.delete(entity));
+ }*/
 
 }
 

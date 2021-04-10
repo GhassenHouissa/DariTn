@@ -13,6 +13,5 @@ public interface AdsService {
 	void deleteAds (Long id);
 	Ads retrieveById(Long id );
 
-
 }
  

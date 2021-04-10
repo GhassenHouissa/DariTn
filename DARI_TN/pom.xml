@@ -79,7 +79,13 @@
     <artifactId>flickr4java</artifactId>
     <version>3.0.4</version>
 </dependency>
-		
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>7.0.0.Final</version>
+</dependency>
+
 	</dependencies>
 
 	<build>
