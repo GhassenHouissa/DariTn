@@ -25,5 +25,16 @@ public class StatisticPaymentController {
 	public List<StatisticPayment> findByCriteria(@RequestBody StatisticPayment statisticPayment){
 		return statisticService.findByCriteria(statisticPayment);
 	}
+	
+	
+	// http://localhost:8082/DARITN/servlet/prix
+	
+		
+	@PostMapping("/prix")
+    @ResponseBody
+	public List<StatisticPayment> findByLocation(@RequestBody StatisticPayment statisticPayment){
+		return statisticService.findByLocation(statisticPayment) ;
+		
+	}
 
 }

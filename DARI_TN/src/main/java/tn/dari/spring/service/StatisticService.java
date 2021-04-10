@@ -28,6 +28,19 @@ public class StatisticService {
 		
 	
 }
+	
+	public List<StatisticPayment> findByLocation(StatisticPayment statisticPayment){
+		
+		String query="SELECT b FROM D_annonce b WHERE 1=1 ";
+		if( StringUtil.isNotEmpty(statisticPayment.getLocation()))
+			query+=" AND b.location = '"+ statisticPayment.getLocation()+"'";
+		
+		if( StringUtil.isNotEmpty(statisticPayment.getPrix()))
+			query+=" AND b.prix = '"+ statisticPayment.getPrix()+"'";
+		
+		return entityManager.createQuery(query).getResultList();
+		
+	}
     
 	@Autowired
 	private EntityManager entityManager;

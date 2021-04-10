@@ -29,6 +29,7 @@ private Long area;
 private int nbRooms ;
 private int roomArea;
 private String composition;
+private String prix;
 
 //private boolean add=false ;  
 
@@ -72,13 +73,37 @@ public Ads(
 	this.roomArea= roomArea;
 	this.composition = composition;
 }
+
+
+public Ads(Long idAds, String content, String location, Long area, int nbRooms, int roomArea, String composition,
+		String prix) {
+	super();
+	this.idAds = idAds;
+	this.content = content;
+	this.location = location;
+	this.area = area;
+	this.nbRooms = nbRooms;
+	this.roomArea = roomArea;
+	this.composition = composition;
+	this.prix = prix;
+}
+public Ads(String content, String location, Long area, int nbRooms, int roomArea, String composition, String prix) {
+	super();
+	this.content = content;
+	this.location = location;
+	this.area = area;
+	this.nbRooms = nbRooms;
+	this.roomArea = roomArea;
+	this.composition = composition;
+	this.prix = prix;
+}
 //***********************//
 
 //***********Getters & Setters***********//
 public Long getIdAds() {
 	return idAds;
 }
-public void setIdAds4(long id_ads) {
+public void setIdAds(long id_ads) {
 	this.idAds = id_ads;
 }
 public String getContent() {
@@ -90,7 +115,7 @@ public void setContent(String content) {
 public String getLocation() {
 	return location;
 }
-public void setLocation4(String location4) {
+public void setLocation(String location4) {
 	this.location= location;
 }
 public Long getArea() {
@@ -102,7 +127,7 @@ public void setArea(long area) {
 public int getNb_rooms() {
 	return nbRooms;
 }
-public void setNb_rooms4(int nb_rooms) {
+public void setNb_rooms(int nb_rooms) {
 	this.nbRooms = nb_rooms;
 }
 public int getRoom_area() {
@@ -117,5 +142,13 @@ public String getComposition() {
 public void setComposition(String composition) {
 	this.composition = composition;
 }
+public String getPrix() {
+	return prix;
+}
+public void setPrix(String prix) {
+	this.prix = prix;
+}
+
+
 //****************************************************//
 }
