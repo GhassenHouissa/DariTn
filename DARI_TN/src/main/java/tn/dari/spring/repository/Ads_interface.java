@@ -20,10 +20,18 @@ public interface Ads_interface extends CrudRepository<Ads, Long> ,JpaRepository<
     List <Ads> findAdsByContent(@Param("content")String content);
 	
 	
-	@Query(value = "SELECT * FROM D_annonce  where location=?1 and composition=?1 " , nativeQuery = true)
+	@Query(value = "SELECT * FROM D_annonce  where location=?1 or composition=?1 " , nativeQuery = true)
     List <Ads> findAdsByLocationOrComposition(@Param("location")String location, @Param("composition")String composition);
 	
 	
+	/*@Query(value = "SELECT * FROM  D_annonce  JOIN Search JOIN User  where (Search.word_search=Adds.add_name OR Search.word_search=Adds.add_content )AND( User.Id=Search.id_client_Search)  AND (User.Id = ?1)   ", nativeQuery = true)
+    List<Ads> lespubquiaffichepourceclient(@Param("id") long id);*/
+	
+	@Query(value = "SELECT * FROM D_annonce  where reduction=1 " , nativeQuery = true)
+    List <Ads> findAdsByReduction(@Param("reduction")Boolean reduction);
+	
+	@Query(value = "SELECT * FROM D_annonce  where augmentation=1 " , nativeQuery = true)
+    List <Ads> findAdsByAugmentation(@Param("augmentation")Boolean augmentation);
 	
 	
 }

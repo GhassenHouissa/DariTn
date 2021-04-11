@@ -13,6 +13,7 @@ import tn.dari.spring.entity.StatisticPayment;
 @Service
 public class StatisticService {
 	
+	
 	public List<StatisticPayment> findByCriteria(StatisticPayment statisticPayment){
 		String query="SELECT c FROM Orders c WHERE 1=1 ";
 		if( StringUtil.isNotEmpty(statisticPayment.getReference()))
@@ -29,7 +30,7 @@ public class StatisticService {
 	
 }
 	
-	public List<StatisticPayment> findByLocation(StatisticPayment statisticPayment){
+	/*public List<StatisticPayment> findByLocationAndPrice(StatisticPayment statisticPayment){
 		
 		String query="SELECT b FROM D_annonce b WHERE 1=1 ";
 		if( StringUtil.isNotEmpty(statisticPayment.getLocation()))
@@ -40,7 +41,7 @@ public class StatisticService {
 		
 		return entityManager.createQuery(query).getResultList();
 		
-	}
+	}*/
     
 	@Autowired
 	private EntityManager entityManager;

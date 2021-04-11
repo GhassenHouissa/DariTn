@@ -27,15 +27,25 @@ public class CommentRestControl {
 	
 	
 	private String mot;
-	private long user_id;
+	//private long user_id;
 	
 	
 	// http://localhost:8082/DARITN/servlet/addComment         
-    @PostMapping("/addComment")
+   /* @PostMapping("/addComment")
     @ResponseBody
     public void AddComment(@RequestBody long ads_id_ads) {
     Comment u = new Comment(mot);
     commentService.addComment(u,uc.findbyid(user_id).getId(),ads_id_ads);
+	}*/
+    
+    
+    
+ // http://localhost:8082/DARITN/servlet/addComment/{user-id}/{post-id}        
+    @PostMapping("/addComment/{user-id}/{post-id}")
+    @ResponseBody
+    public String addComment(@RequestBody Comment com,@PathVariable("user-id")long userid,@PathVariable("post-id")long postid) {
+    	commentService.addComment(com,userid,postid);
+	return "add successful ";
 	}
 	
 	

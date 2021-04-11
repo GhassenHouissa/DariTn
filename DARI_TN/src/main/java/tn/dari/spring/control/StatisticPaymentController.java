@@ -30,11 +30,11 @@ public class StatisticPaymentController {
 	// http://localhost:8082/DARITN/servlet/prix
 	
 		
-	@PostMapping("/prix")
+	/*@PostMapping("/prix")
     @ResponseBody
-	public List<StatisticPayment> findByLocation(@RequestBody StatisticPayment statisticPayment){
-		return statisticService.findByLocation(statisticPayment) ;
+	public List<StatisticPayment> findByLocationAndPrice(@RequestBody StatisticPayment statisticPayment){
+		return statisticService.findByLocationAndPrice(statisticPayment) ;
 		
-	}
+	}*/
 
 }

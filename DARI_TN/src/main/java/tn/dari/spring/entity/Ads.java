@@ -25,6 +25,10 @@ public class Ads implements Serializable  {
 private Long idAds;
 private String content;
 private String location;
+private boolean reduction;
+private String baissePrix;
+private boolean augmentation;
+private String haussePrix;
 private Long area;
 private int nbRooms ;
 private int roomArea;
@@ -97,6 +101,22 @@ public Ads(String content, String location, Long area, int nbRooms, int roomArea
 	this.composition = composition;
 	this.prix = prix;
 }
+
+public Ads(String content, String location, boolean reduction, String baissePrix, boolean augmentation,
+		String haussePrix, Long area, int nbRooms, int roomArea, String composition, String prix) {
+	super();
+	this.content = content;
+	this.location = location;
+	this.reduction = reduction;
+	this.baissePrix = baissePrix;
+	this.augmentation = augmentation;
+	this.haussePrix = haussePrix;
+	this.area = area;
+	this.nbRooms = nbRooms;
+	this.roomArea = roomArea;
+	this.composition = composition;
+	this.prix = prix;
+}
 //***********************//
 
 //***********Getters & Setters***********//
@@ -115,7 +135,7 @@ public void setContent(String content) {
 public String getLocation() {
 	return location;
 }
-public void setLocation(String location4) {
+public void setLocation(String location) {
 	this.location= location;
 }
 public Long getArea() {
@@ -148,6 +168,32 @@ public String getPrix() {
 public void setPrix(String prix) {
 	this.prix = prix;
 }
+public boolean isReduction() {
+	return reduction;
+}
+public void setReduction(boolean reduction) {
+	this.reduction = reduction;
+}
+public String getBaissePrix() {
+	return baissePrix;
+}
+public void setBaissePrix(String baissePrix) {
+	this.baissePrix = baissePrix;
+}
+public boolean isAugmentation() {
+	return augmentation;
+}
+public void setAugmentation(boolean augmentation) {
+	this.augmentation = augmentation;
+}
+public String getHaussePrix() {
+	return haussePrix;
+}
+public void setHaussePrix(String haussePrix) {
+	this.haussePrix = haussePrix;
+}
+
+
 
 
 //****************************************************//

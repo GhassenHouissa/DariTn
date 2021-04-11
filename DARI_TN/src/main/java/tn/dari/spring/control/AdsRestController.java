@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -69,11 +68,40 @@ public List<Ads> searchbyContent(@PathVariable(name="content") String content){
 //http://localhost:8082/DARITN/servlet/loc/{location}
 	
 	@GetMapping("loc/{location}")
-	 public List<Ads> searchbyLocationOrComposition(@PathVariable(name="location") String location,String composition){
-			/*Search search = new Search(location) ;
-			repop.save(search);*/
+	 public List<Ads> searchbyLocationOrPrice(@PathVariable(name="location") String location, String composition){
+			Search search = new Search(location) ;
+			repop.save(search);
 			return repo.findAdsByLocationOrComposition(location, composition) ;
 	 }
+	
+	
+/*@GetMapping("AddsForclient/{id}")
+	
+    public List<Ads> searchbyLocationOrComposition(@PathVariable long id  ){
+	  
+		
+		return adsInterface.lespubquiaffichepourceclient(id); 
+}*/
+	
+	
+	
+	//http://localhost:8082/DARITN/servlet/reduction/{reduction}
+	
+		@GetMapping("reduction/{reduction}")
+		 public List<Ads> alertebyReduction(@PathVariable(name="reduction") Boolean reduction){
+				
+				return repo.findAdsByReduction(reduction) ;
+		 }
+		
+		
+		//http://localhost:8082/DARITN/servlet/augmentation/{augmentation}	
+		
+		@GetMapping("augmentation/{augmentation}")
+		 public List<Ads> alertebyAugmentation(@PathVariable(name="augmentation") Boolean augmentation){
+				
+				return repo.findAdsByAugmentation(augmentation) ;
+		 }
+		
 
 
 }

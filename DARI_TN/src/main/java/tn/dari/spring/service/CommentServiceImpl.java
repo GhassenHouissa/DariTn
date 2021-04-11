@@ -91,8 +91,7 @@ public class CommentServiceImpl implements ICommentService{
 			}
 		 else {
 			 cr.save(com); 
-	 		
-			} 
+		 } 
 		 return msg= "add successful ";
 		
 	}
