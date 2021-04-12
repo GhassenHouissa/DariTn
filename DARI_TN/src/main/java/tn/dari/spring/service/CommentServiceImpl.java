@@ -1,7 +1,6 @@
 package tn.dari.spring.service;
 
 import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.entity.Comment;
 import tn.dari.spring.entity.User;
-import tn.dari.spring.repository.Ads_interface;
 import tn.dari.spring.repository.CommentRepository;
 import tn.dari.spring.repository.UserRepository;
 
@@ -24,7 +22,7 @@ public class CommentServiceImpl implements ICommentService{
 	CommentRepository cr;
 	
 	@Autowired
-	Ads_interface as;
+	AdsServiceImp as;
 	
 	@Autowired
 	UserRepository ur;
@@ -38,8 +36,9 @@ public class CommentServiceImpl implements ICommentService{
 	}*/
 
 	@Override
-	public boolean deleteComment(long id) {
-		if(cr.existsById(id)){
+	public boolean deleteComment(long id , long userId) {
+		Comment comment = cr.findById(id).get();
+		if (comment.getUser().getId()==userId){
 			cr.deleteById(id);
 			return true;
 		}
@@ -71,14 +70,14 @@ public class CommentServiceImpl implements ICommentService{
 
 	
 	
-	//************************************************************************************************************
+	//********************************add****************************************************************************
 
 	@Override
 	public String addComment(Comment com, long user_id, long ads_id) {
 		
          User u = ur.findById(user_id).get();
 		
-		Ads s = as.findById(ads_id).get();
+		Ads s = as.findbyid(ads_id);
 		
 		com.setUser(u);
 		com.setAds(s);

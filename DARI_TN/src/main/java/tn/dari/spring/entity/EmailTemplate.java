@@ -10,6 +10,16 @@ public class EmailTemplate {
 	private String subject;
 	@Max(value = 500)
 	private String body;
+	
+	
+	
+
+	public EmailTemplate(@Email String sendTo, @Max(100) String subject, @Max(500) String body) {
+		super();
+		this.sendTo = sendTo;
+		this.subject = subject;
+		this.body = body;
+	}
 
 	public String getSendTo() {
 		return sendTo;

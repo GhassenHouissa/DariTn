@@ -24,7 +24,7 @@ public class FavoritesServiceImplTest {
 	@Autowired
 	IFavoritesService fs ;
 	
-	@Test
+	/*@Test
 	public void addFavoritesTest() throws ParseException{
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -32,7 +32,7 @@ public class FavoritesServiceImplTest {
 		Favorites f = new Favorites(date,12);
 		
 		fs.addFavorites(f);
-	}
+	}*/
 	
 	@Test
 	public void deleteFavoritesTest(){

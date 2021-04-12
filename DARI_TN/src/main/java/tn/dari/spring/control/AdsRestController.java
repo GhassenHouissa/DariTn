@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.dari.spring.entity.Ads;
+import tn.dari.spring.entity.EmailTemplate;
 import tn.dari.spring.entity.Search;
 import tn.dari.spring.repository.Ads_interface;
 import tn.dari.spring.repository.SearchRepository;
 import tn.dari.spring.service.Ads_service;
+import tn.dari.spring.service.EmailService;
 
 @RestController
 public class AdsRestController {
@@ -29,6 +31,12 @@ public class AdsRestController {
 	@Autowired
 	Ads_interface repo;
 	
+	@Autowired
+	private EmailService emailService;
+	
+	EmailTemplate emailTemplate = new EmailTemplate("roua.mbarki1@esprit.tn","DARI.TN : Réduction des prix ", "BONJOUR , Consulter notre site daritn pour profiter des offres de réductions pour quelques annonces ");
+	
+	EmailTemplate emailTemplatee = new EmailTemplate("roua.mbarki1@esprit.tn","DARI.TN : Augmentation des prix", "BONJOUR , Consulter notre site daritn pour voir les changement des offres d'augmentation  pour quelques annonces ");
 	
 	
 	
@@ -68,20 +76,28 @@ public List<Ads> searchbyContent(@PathVariable(name="content") String content){
 //http://localhost:8082/DARITN/servlet/loc/{location}
 	
 	@GetMapping("loc/{location}")
-	 public List<Ads> searchbyLocationOrPrice(@PathVariable(name="location") String location, String composition){
+	 public List<Ads> searchbyLocationOrComposition(@PathVariable(name="location") String location, String composition){
 			Search search = new Search(location) ;
 			repop.save(search);
 			return repo.findAdsByLocationOrComposition(location, composition) ;
 	 }
 	
 	
-/*@GetMapping("AddsForclient/{id}")
 	
-    public List<Ads> searchbyLocationOrComposition(@PathVariable long id  ){
+	
+	//http://localhost:8082/DARITN/servlet/AdsForclient/{idAds}
+	
+@GetMapping("AdsForclient/{idAds}")
+	
+    public List<Ads> searchbyLocationOrComposition(@PathVariable long idAds  ){
 	  
 		
-		return adsInterface.lespubquiaffichepourceclient(id); 
-}*/
+		return adsInterface.lespubquiaffichepourceclient(idAds); 
+}
+
+
+
+
 	
 	
 	
@@ -89,8 +105,16 @@ public List<Ads> searchbyContent(@PathVariable(name="content") String content){
 	
 		@GetMapping("reduction/{reduction}")
 		 public List<Ads> alertebyReduction(@PathVariable(name="reduction") Boolean reduction){
-				
-				return repo.findAdsByReduction(reduction) ;
+				List<Ads> listAds=null ;
+				listAds = repo.findAdsByReduction(reduction);
+				try {
+					//log.info("Sending Simple Text Email....");
+					emailService.sendTextEmail(emailTemplate);
+					
+				} catch (Exception ex) {
+					
+				}
+				return listAds ;
 		 }
 		
 		
@@ -98,8 +122,18 @@ public List<Ads> searchbyContent(@PathVariable(name="content") String content){
 		
 		@GetMapping("augmentation/{augmentation}")
 		 public List<Ads> alertebyAugmentation(@PathVariable(name="augmentation") Boolean augmentation){
+			List<Ads> listAdss=null ;
+			listAdss = repo.findAdsByAugmentation(augmentation);
+			
+			try {
+				//log.info("Sending Simple Text Email....");
+				emailService.sendTextEmail(emailTemplatee);
 				
-				return repo.findAdsByAugmentation(augmentation) ;
+			} catch (Exception ex) {
+				
+			}
+				
+				return listAdss ;
 		 }
 		
 

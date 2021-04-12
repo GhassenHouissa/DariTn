@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.dari.spring.entity.Comment;
 import tn.dari.spring.entity.Favorites;
 import tn.dari.spring.service.IFavoritesService;
 
@@ -24,22 +25,23 @@ public class FavorisControl {
 	
 	//********************************************add****************************************
 	
-	// http://localhost:8082/DARITN/servlet/add-favorites
-	@PostMapping("/add-favorites")
-	@ResponseBody
-	public Favorites addFavorites(@RequestBody Favorites f) {
-		Favorites favorites = favoritesService.addFavorites(f);     
-	return favorites;
+	
+	// http://localhost:8082/DARITN/servlet/addFavorites/{userid}/{adsid}        
+    @PostMapping("/addFavorites/{userid}/{adsid}")
+    @ResponseBody
+    public String addFavorites(@RequestBody Favorites fav,@PathVariable("userid")long userid,@PathVariable("adsid")long adsid) {
+    	favoritesService.addFavorites(fav, userid, adsid) ; 
+	return "add successful ";
 	}
 	
 	
 	//*********************************delete************************************************
 	
-	// http://localhost:8082/DARITN/servlet/remove-favorites/{favorites-id}
-	@DeleteMapping("/remove-favorites/{favorites-id}")
+	// http://localhost:8082/DARITN/servlet/remove-favorites/{favorites-id}/{user-id}
+	@DeleteMapping("/remove-favorites/{favorites-id}/{user-id}")
 	@ResponseBody
-	public void removeFavorites(@PathVariable("favorites-id") long favoritesId) {
-		favoritesService.deleteFavorites(favoritesId);   
+	public void removeFavorites(@PathVariable("favorites-id") long favoritesId , @PathVariable("user-id") long userId  ) {
+		favoritesService.deleteFavorites(favoritesId , userId);   
 	}
 	
 	

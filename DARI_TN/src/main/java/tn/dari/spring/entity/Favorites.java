@@ -96,6 +96,30 @@ public Favorites(Long id, Date date) {
 	public void setNum(int num) {
 		this.num = num;
 	}
+
+
+
+	public Ads getAds() {
+		return ads;
+	}
+
+
+
+	public void setAds(Ads ads) {
+		this.ads = ads;
+	}
+
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 	
 	

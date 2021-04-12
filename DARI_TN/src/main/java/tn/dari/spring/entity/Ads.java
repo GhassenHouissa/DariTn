@@ -23,6 +23,8 @@ public class Ads implements Serializable  {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long idAds;
+
+
 private String content;
 private String location;
 private boolean reduction;

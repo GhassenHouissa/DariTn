@@ -30,13 +30,6 @@ public class CommentRestControl {
 	//private long user_id;
 	
 	
-	// http://localhost:8082/DARITN/servlet/addComment         
-   /* @PostMapping("/addComment")
-    @ResponseBody
-    public void AddComment(@RequestBody long ads_id_ads) {
-    Comment u = new Comment(mot);
-    commentService.addComment(u,uc.findbyid(user_id).getId(),ads_id_ads);
-	}*/
     
     
     
@@ -48,28 +41,14 @@ public class CommentRestControl {
 	return "add successful ";
 	}
 	
-	
-	
-//*****************************************add***************************************
-	// http://localhost:8082/DARITN/servlet/add-Comment         
-	           /* @PostMapping("/add-Comment")
-	            @ResponseBody
-				public Comment addComment(@RequestBody Comment c) {
-					Comment comment = commentService.addComment(c);     
-				return comment;
-				}*/
-	            
-	            
-	          
-				
-	
+
 	
 //*************************************************delete************************************
-	// http://localhost:8082/DARITN/servlet/remove-comment/{comment-id}
-				@DeleteMapping("/remove-comment/{comment-id}")
+	// http://localhost:8082/DARITN/servlet/remove-comment/{comment-id}/{user-id}
+				@DeleteMapping("/remove-comment/{comment-id}/{user-id}")
 				@ResponseBody
-				public void removeComment(@PathVariable("comment-id") long commentId) {
-					commentService.deleteComment(commentId);         
+				public void removeComment(@PathVariable("comment-id") long commentId,@PathVariable("user-id") long userId) {
+					commentService.deleteComment(commentId,  userId);         
 				}
 				
 				

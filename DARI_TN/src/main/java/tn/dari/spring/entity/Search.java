@@ -25,10 +25,13 @@ public class Search implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private Long id_client_Search;
+	
 	private String type ;
 	private String location ;
 	private Float price ;
 	private Long nbr;
+	private String word_search;
 
 	
 	@ManyToOne
@@ -59,6 +62,15 @@ public class Search implements Serializable {
 	
 
 	
+
+	public Search(Long id, Long id_client_Search, String word_search) {
+		super();
+		this.id = id;
+		this.id_client_Search = id_client_Search;
+		this.word_search = word_search;
+	}
+
+
 
 	public Search(Long id, String location) {
 		super();
@@ -150,6 +162,30 @@ public class Search implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+
+
+	public Long getId_client_Search() {
+		return id_client_Search;
+	}
+
+
+
+	public void setId_client_Search(Long id_client_Search) {
+		this.id_client_Search = id_client_Search;
+	}
+
+
+
+	public String getWord_search() {
+		return word_search;
+	}
+
+
+
+	public void setWord_search(String word_search) {
+		this.word_search = word_search;
 	}
 	
 	
