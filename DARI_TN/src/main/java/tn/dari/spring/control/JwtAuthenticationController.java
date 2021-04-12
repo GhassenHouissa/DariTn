@@ -7,7 +7,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.dari.spring.config.JwtTokenUtil;
 import tn.dari.spring.entity.JwtRequest;
 import tn.dari.spring.entity.JwtResponse;
-import tn.dari.spring.service.JwtUserDetailsService;
 import tn.dari.spring.service.UserDetailServiceImpl;
 
 @RestController

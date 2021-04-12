@@ -1,12 +1,5 @@
 package tn.dari.spring.config;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,20 +11,12 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.DefaultRedirectStrategy;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 import tn.dari.spring.service.UserDetailServiceImpl;
 import tn.dari.spring.service.UserService;
-import tn.dari.spring.util.UserAuthenticationFailureHandler;
-import tn.dari.spring.util.UserLogoutSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -59,16 +44,6 @@ public class SecSecuityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
-	}
-
-	@Bean
-	public AuthenticationFailureHandler authenticationFailureHandler() {
-		return new UserAuthenticationFailureHandler();
-	}
-
-	@Bean
-	public LogoutSuccessHandler logoutSuccessHandler() {
-		return new UserLogoutSuccessHandler();
 	}
 
 	@Autowired
