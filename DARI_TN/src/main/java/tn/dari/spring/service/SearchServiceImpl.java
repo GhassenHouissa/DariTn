@@ -8,26 +8,44 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.dari.spring.entity.Ads;
+import tn.dari.spring.entity.Comment;
 import tn.dari.spring.entity.Search;
 import tn.dari.spring.entity.User;
 import tn.dari.spring.repository.SearchRepository;
+import tn.dari.spring.repository.UserRepository;
 
 
 @Service
 public class SearchServiceImpl implements ISearchService {
 	
-	
+	public String msg;
     
 	@Autowired
 	SearchRepository sr;
 	
+	@Autowired
+	AdsServiceImp as;
+	
+	@Autowired
+	UserRepository ur;
+	
 	private static final Logger l = LogManager.getLogger(SearchServiceImpl.class);
 	
 	@Override
-	public Search addSearch(Search s) {
-		return sr.save(s);
+	public String addSearch(Search sear, long user_id) {
+		
+         User u = ur.findById(user_id).get();
+		
+		
+		sear.setUser(u);
+        sr.save(sear); 
+		 
+		 return msg= "add successful ";
 		
 	}
+	
+	
 	@Override
 	public boolean deleteSearch(long id) {
 		

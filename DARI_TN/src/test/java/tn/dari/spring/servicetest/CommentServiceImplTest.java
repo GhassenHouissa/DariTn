@@ -48,12 +48,12 @@ public class CommentServiceImplTest {
 	
 	
 	
-	@Test
+	/*@Test
 	public void deleteCommentTest(){
 		l.info("comment deleted: "+ cs.deleteComment(8));
 		 
 		
-	}
+	}*/
 	
 	@Test 
 	public void testupdateComment(){                        

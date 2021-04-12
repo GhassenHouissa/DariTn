@@ -34,10 +34,10 @@ public class FavoritesServiceImplTest {
 		fs.addFavorites(f);
 	}*/
 	
-	@Test
+	/*@Test
 	public void deleteFavoritesTest(){
 		l.info("favorites deleted : "+ fs.deleteFavorites(3));
 		
-	}
+	}*/
 
 }

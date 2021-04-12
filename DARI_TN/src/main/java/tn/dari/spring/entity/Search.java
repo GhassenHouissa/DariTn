@@ -44,7 +44,7 @@ public class Search implements Serializable {
 		
 	}
 	
-
+ private Ads ads ;
 	
 	//constructeur parametrés 
 	
@@ -80,17 +80,42 @@ public class Search implements Serializable {
 
 
 
-	public Search(String type, String location, Float price, Long nbr, User user) {
+	
+	
+	
+
+
+	public Search(Long id_client_Search, String type, String location, Float price, String word_search, User user,
+			Ads ads) {
 		super();
+		this.id_client_Search = id_client_Search;
 		this.type = type;
 		this.location = location;
 		this.price = price;
-		this.nbr = nbr;
+		this.word_search = word_search;
 		this.user = user;
+		this.ads = ads;
 	}
-	
-	
-	
+
+
+
+
+
+	public Search(Long id, Long id_client_Search, String type, String location, Float price, String word_search,
+			User user, Ads ads) {
+		super();
+		this.id = id;
+		this.id_client_Search = id_client_Search;
+		this.type = type;
+		this.location = location;
+		this.price = price;
+		this.word_search = word_search;
+		this.user = user;
+		this.ads = ads;
+	}
+
+
+
 
 
 	public Search(String type) {
@@ -187,6 +212,25 @@ public class Search implements Serializable {
 	public void setWord_search(String word_search) {
 		this.word_search = word_search;
 	}
+
+
+
+
+
+	public Ads getAds() {
+		return ads;
+	}
+
+
+
+
+
+	public void setAds(Ads ads) {
+		this.ads = ads;
+	}
+	
+	
+	
 	
 	
 	

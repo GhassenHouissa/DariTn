@@ -8,7 +8,6 @@ import tn.dari.spring.entity.User;
 
 public interface ISearchService {
 	
-	Search addSearch(Search s);
 	boolean deleteSearch(long id);
 	Search updateSearch(Search s);
 	List<Search> retrieveAllSearch();
@@ -16,6 +15,7 @@ public interface ISearchService {
 	
 	
 	Search addSearch1(Search rech,User u);
+	String addSearch(Search sear, long user_id);
 	
 
 }

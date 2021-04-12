@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.dari.spring.entity.Comment;
 import tn.dari.spring.entity.Search;
 import tn.dari.spring.service.ISearchService;
 
@@ -23,13 +24,13 @@ public class SearchRestControl {
 	ISearchService searchService;
 	
 	//*******************add*********************************************************
-	// http://localhost:8082/DARITN/servlet/add-Search
-			@PostMapping("add-Search")
-			@ResponseBody
-			public Search addSearch(@RequestBody Search s) {
-				Search search = searchService.addSearch(s);     
-			return search;
-			}
+	// http://localhost:8082/DARITN/servlet/addSearch/{user-iid}       
+    @PostMapping("/addSearch/{user-iid}")
+    @ResponseBody
+    public String addSearch(@RequestBody Search sear,@PathVariable("user-iid")long userId) {
+    	searchService.addSearch(sear,userId);
+	return "add successful ";
+	}
 			
 //*****************delete*********************************************************
 			

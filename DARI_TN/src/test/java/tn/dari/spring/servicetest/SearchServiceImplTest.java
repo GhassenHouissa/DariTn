@@ -26,12 +26,12 @@ public class SearchServiceImplTest {
 	SearchRepository sr;
 	
 	
-	@Test
+	/*@Test
 	public void addSearchTest(){
 		
 		Search s = new Search(null, "villa","tunis",(float) 130000000, null, null);
 		ss.addSearch(s);
-	}
+	}*/
 	
 	@Test
 	public void deleteSearchTest(){
@@ -41,7 +41,7 @@ public class SearchServiceImplTest {
 	}
 	
 	
-	@Test 
+	/*@Test 
 	public void testupdateSearch(){                        
 		Search s = sr.findById((long) 5).get();
 		s.setType("villa");
@@ -49,6 +49,6 @@ public class SearchServiceImplTest {
 		s.setPrice((float) 250000000);
         ss.addSearch(s);
 		
-	}
+	}*/
 
 }
