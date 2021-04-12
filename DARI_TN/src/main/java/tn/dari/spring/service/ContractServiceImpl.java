@@ -11,9 +11,10 @@ import tn.dari.spring.entity.Contract;
 import tn.dari.spring.repository.ContractRepository;
 
 @Service
-public class ContractServiceImpl implements ContractService{
+public  class ContractServiceImpl implements ContractService{
 
 	@Autowired
+	
 	ContractRepository cr;
 	
 //	private static final Logger l = LogManager.getLogger(ContractServiceImpl.class);

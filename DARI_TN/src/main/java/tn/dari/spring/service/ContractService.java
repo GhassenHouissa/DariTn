@@ -15,5 +15,7 @@ public interface ContractService {
 	List<Contract> retrieveAllContract();
 
 	Contract retrieveContract(Long id);
+	
+
 
 }
