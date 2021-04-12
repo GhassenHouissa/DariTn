@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.dari.spring.config.JwtTokenUtil;
 import tn.dari.spring.entity.JwtRequest;
 import tn.dari.spring.entity.JwtResponse;
-import tn.dari.spring.service.JwtUserDetailsService;
 import tn.dari.spring.service.UserDetailServiceImpl;
 
 @RestController
