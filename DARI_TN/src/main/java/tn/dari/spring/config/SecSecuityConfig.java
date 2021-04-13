@@ -19,6 +19,7 @@ import tn.dari.spring.service.UserDetailServiceImpl;
 import tn.dari.spring.service.UserService;
 
 
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -47,15 +48,7 @@ public class SecSecuityConfig extends WebSecurityConfigurerAdapter {
 		return super.authenticationManagerBean();
 	}
 
-//	@Bean
-//	public AuthenticationFailureHandler authenticationFailureHandler() {
-//		return new UserAuthenticationFailureHandler();
-//	}
-//
-//	@Bean
-//	public LogoutSuccessHandler logoutSuccessHandler() {
-//		return new UserLogoutSuccessHandler();
-//	}
+
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -66,14 +59,7 @@ public class SecSecuityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-//		@Override
-//		protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//			
-//			
-//			auth.inMemoryAuthentication().withUser("USER")
-//					.password(passwordEncoder().encode("PASSWORD")).roles("CUSTOMER").and().withUser("admin")
-//					.password(passwordEncoder().encode("admin")).roles("USER", "ADMIN");
-//		}
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -91,25 +77,24 @@ public class SecSecuityConfig extends WebSecurityConfigurerAdapter {
 ////				.antMatchers(HttpMethod.GET, "/retrieve-all-users/{user-id}").permitAll()
 //				.antMatchers(HttpMethod.GET, "/retrieveUserByLogin/{login}").permitAll()
 //				.antMatchers(HttpMethod.GET, "/retrieveUserByEmail/{email}").permitAll()
-				.antMatchers(HttpMethod.POST, "/authenticate").permitAll()
-				.antMatchers("/admin/**")
-				.hasRole("ADMIN").antMatchers("/anonymous*").anonymous().antMatchers("/login*").permitAll() // obligatoire
-																											// pour
-																											// affichage
-																											// page
-																											// login
-																											// default
+				.antMatchers(HttpMethod.POST, "/add-user").permitAll().antMatchers(HttpMethod.POST, "/authenticate")
+				.permitAll().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/anonymous*").anonymous()
+				.antMatchers("/login*").permitAll() // obligatoire
+													// pour
+													// affichage
+													// page
+													// login
+													// default
 				.anyRequest().authenticated().and().formLogin().permitAll()//
 				.defaultSuccessUrl("/Welcom").and().logout().permitAll().and().cors().and().csrf().disable()
-				
+
 				// make sure we use stateless session; session won't be used to
 				// store user's state.
 				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		
+
 		// Add a filter to validate the tokens with every request
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-
 
 	}
 
