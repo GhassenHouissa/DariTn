@@ -16,6 +16,9 @@ import tn.dari.spring.service.Ads_service;
 @Entity
 @Table(name="D_annonce")
 public class Ads  {
+	
+	//@OneToMany
+	//Visit visit;
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long idAds4;
