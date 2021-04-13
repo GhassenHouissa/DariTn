@@ -69,8 +69,8 @@ public class UserRestController {
 	@ResponseBody
 	public int countUserByRole(@PathVariable("role") String role) {
 		
-		System.out.println(Role.valueOf(role));
-		System.out.println(Role.valueOf("Customer"));
+//		System.out.println(Role.valueOf(role));
+//		System.out.println(Role.valueOf("Customer"));
 		int countUserByRole= userService.findUserByRole(Role.valueOf(role));
 		return countUserByRole;
 	}
