@@ -1,7 +1,16 @@
 package tn.dari.spring.entity;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import java.util.List;
+=======
+import java.util.List;
+
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+public class User {
+>>>>>>> refs/remotes/origin/Guebli
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -146,4 +155,6 @@ public class User implements Serializable {
 //			this.favorites = favorites;
 //		}
 
+	////@ManyToOne
+	//private List<Claim>claims;
 }
