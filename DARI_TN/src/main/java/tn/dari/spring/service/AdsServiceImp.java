@@ -1,18 +1,53 @@
 package tn.dari.spring.service;
 
-import javax.persistence.GenerationType;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import tn.dari.spring.entity.Ads;
-import tn.dari.spring.repository.Ads_interface;
-
-public class AdsServiceImp implements Ads_service{
+import tn.dari.spring.repository.AdsRepository;
+@Service(value="/test")
+public class AdsServiceImp implements AdsService{
 	@Autowired
-	Ads_interface repository;
-	
+	private	AdsRepository adsInterface;
+
 @Override
-public Ads addAds(Ads a) {
-	return repository.save(a);
+public List<Ads> retrieveAll() {
+
+	return (List<Ads>) adsInterface.findAll();
+} 
+
+@Override
+public Ads addAds(@RequestBody Ads a) {
+	return adsInterface.save(a);
 }
+
+@Override
+public Ads updateAds(@PathVariable(name="id") Long id ,@RequestBody Ads a) {
+	a.setId4(id);
+	return adsInterface.save(a);
 }
+
+@Override
+public void deleteAds(@PathVariable(name="id") Long id) {
+	adsInterface.deleteById(id);	
+}
+
+@Override
+public Ads retrieveById(@PathVariable(name="id") Long id) {
+	Ads ads=adsInterface.findById(id).get();
+	if(ads!=null)
+		return ads;
+	return null;
+}
+//@Scheduled(cron = "0 0 */9 * * *")
+/* public void deleteNotSubscriberAds() {
+	 List<Ads> ads =ads.forEach(entity->adsInterface.delete(entity));
+ }*/
+
+}
+
