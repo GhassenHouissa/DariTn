@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-04-11 00:06:36.094 ERROR 8924 --- [http-nio-8081-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/ads] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded; nested exception is java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (49158042) exceeds the configured maximum (10485760)] with root cause
 
 org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (49158042) exceeds the configured maximum (10485760)
@@ -134,3 +135,10 @@ Identify and stop the process that's listening on port 8081 or configure this ap
 2021-04-11 00:52:46.772  INFO 8780 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-04-11 00:52:46.776  INFO 8780 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-04-11 00:52:46.783  INFO 8780 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+=======
+2021-04-13 03:12:29.565  INFO 45308 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-04-13 03:12:29.853  INFO 45308 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 03:12:29.854  INFO 45308 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-13 03:12:29.866  INFO 45308 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-13 03:12:29.872  INFO 45308 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> refs/remotes/origin/Guebli
