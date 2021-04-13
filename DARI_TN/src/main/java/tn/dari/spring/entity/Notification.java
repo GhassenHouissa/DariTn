@@ -2,11 +2,7 @@ package tn.dari.spring.entity;
 
 import javax.persistence.ManyToOne;
 
-public class Notification {
-
-
-
-}import java.io.Serializable;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -62,7 +58,7 @@ public class Notification implements Serializable{
 	public String toString() {
 		return "Notification [IdNotif=" + IdNotif + ", DescNotif=" + DescNotif + ", SubjectNotif=" + SubjectNotif + "]";
 	}
-	
+}
 
 	
 
