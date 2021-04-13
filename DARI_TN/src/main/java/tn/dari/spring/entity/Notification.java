@@ -1,7 +1,5 @@
 package tn.dari.spring.entity;
 
-import javax.persistence.ManyToOne;
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
