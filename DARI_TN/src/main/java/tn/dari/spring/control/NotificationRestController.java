@@ -49,4 +49,19 @@ public class NotificationRestController {
 		public void removeNotification(@PathVariable("notification-id") Long notificationId) {
 			notificationService.deleteNotification(notificationId);
 		}
+		
+		//http://localhost:9090/SpringMVC/servlet/numberOfNotification
+		@GetMapping("/numberOfNotification")
+	    @ResponseBody
+	    public Long countNotification() {
+	    	Long countNotification= notificationService.countNotification() ;
+	    	return countNotification;
+	    }
+		
+		//http://localhost:9090/SpringMVC/servlet/retrieveNotificationByDescription/first ad
+		@GetMapping("/retrieveNotificationByDescription/{DescNotif}")
+		@ResponseBody
+		public Notification retrieveNotifByDescription (@PathVariable("DescNotif") String DescNotif) {
+			return notificationService.retrieveNotifByDescription(DescNotif);
+	}
 	}

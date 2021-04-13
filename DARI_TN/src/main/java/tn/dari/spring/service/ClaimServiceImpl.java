@@ -49,4 +49,14 @@ public class ClaimServiceImpl implements ClaimService {
 		return claimRepository.findById(id).get();
 	}
 	
+	public long countClaim() {
+		return claimRepository.count();		
+	}
+	
+	@Override
+	public Claim retrieveClaimByDescription(String description_claim) {
+		Claim claim = claimRepository.findClaimByDescription(description_claim);
+		return claim;
+	}
+	
 }

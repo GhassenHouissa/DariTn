@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.dari.spring.entity.Claim;
 import tn.dari.spring.entity.Notification;
 import tn.dari.spring.repository.NotificationRepository;
 
@@ -48,5 +49,15 @@ public class NotificationServiceImpl implements NotificationService {
 	public Notification retrieveNotification(Long id) {
 		// TODO Auto-generated method stub
 		return notificationRepository.findById(id).get();
+	}
+	
+	public long countNotification() {
+		return notificationRepository.count();		
+	}
+	
+	@Override
+	public Notification retrieveNotifByDescription(String DescNotif) {
+		Notification notification = notificationRepository.findNotifByDescription(DescNotif);
+		return notification;
 	}
 }

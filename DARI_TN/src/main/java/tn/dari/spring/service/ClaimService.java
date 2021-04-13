@@ -9,6 +9,9 @@ import tn.dari.spring.entity.Claim;
 @Repository
 public interface ClaimService {
 
+
+	long countClaim();
+	
 	List<Claim> retrieveAllClaims();
 
 	Claim addClaim(Claim claim);
@@ -18,6 +21,8 @@ public interface ClaimService {
 	Claim retrieveclaimbyId(Long id);
 
 	Claim retrieveClaim(Long id);
+
+	Claim retrieveClaimByDescription(String description_claim);
 
 	
 }

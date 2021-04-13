@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.dari.spring.entity.Claim;
 import tn.dari.spring.service.ClaimService;
+import tn.dari.spring.service.ClaimServiceImpl;
 
 @RestController
 public class ClaimRestController {
@@ -50,4 +51,19 @@ public class ClaimRestController {
 		public void removeClaim(@PathVariable("claim-id") Long claimId) {
 			claimService.deleteClaim(claimId);
 		}
+		
+		//http://localhost:9090/SpringMVC/servlet/numberOfClaims
+		@GetMapping("/numberOfClaims")
+	    @ResponseBody
+	    public Long countClaim() {
+	    	Long countClaim= claimService.countClaim() ;
+	    	return countClaim;
+	    }
+		
+		//http://localhost:9090/SpringMVC/servlet/retrieveClaimByDescription/new ad
+		@GetMapping("/retrieveClaimByDescription/{description_claim}")
+		@ResponseBody
+		public Claim retrieveClaimByDescription (@PathVariable("description_claim") String description_claim) {
+			return claimService.retrieveClaimByDescription(description_claim);
 	}
+}
