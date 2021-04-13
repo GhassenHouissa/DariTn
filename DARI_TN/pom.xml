@@ -41,9 +41,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
-<<<<<<< HEAD
-
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>4.13.2</version>
@@ -108,13 +107,6 @@
 			<version>1.18.18</version>
 			<scope>provided</scope>
 		</dependency>
-=======
- 			 <groupId>junit</groupId>
- 			 <artifactId>junit</artifactId>
-  				<version>4.13.2</version>
-  				<scope>test</scope>
-</dependency>
->>>>>>> refs/remotes/origin/Guebli
 	</dependencies>
 
 	<build>
