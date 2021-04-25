@@ -28,7 +28,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "assets/js/main.js"
             ]
           },
           "configurations": {
@@ -96,7 +95,7 @@
 
             ],
             "scripts": [
-              "assets/js/main.js"
+            
             ]
           }
         },
