@@ -12,7 +12,6 @@ import { AgentComponentComponent } from './agent-component/agent-component.compo
 import { LatestNewsComponentComponent } from './latest-news-component/latest-news-component.component';
 import { TestimonialsComponentComponent } from './testimonials-component/testimonials-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
-import { AboutComponentComponent } from './about-component/about-component.component';
 import { PropertyGridComponent } from './property-grid/property-grid.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -24,7 +23,7 @@ import { AgentSingleComponent } from './agent-single/agent-single.component';
 import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { ContactComponent } from './contact/contact.component';
 
-@NgModule({
+@NgModule({  
   declarations: [
     AppComponent,
     SearchComponentComponent,
@@ -36,7 +35,6 @@ import { ContactComponent } from './contact/contact.component';
     LatestNewsComponentComponent,
     TestimonialsComponentComponent,
     FooterComponentComponent,
-    AboutComponentComponent,
     PropertyGridComponent,
     HomeComponent,
     AboutComponent,

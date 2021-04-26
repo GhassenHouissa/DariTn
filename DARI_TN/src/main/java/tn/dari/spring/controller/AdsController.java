@@ -1,100 +1,83 @@
 package tn.dari.spring.controller;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.core.annotation.RestResource;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import tn.dari.spring.entity.Ads;
+import tn.dari.spring.entity.Category;
+import tn.dari.spring.entity.Transaction;
+import tn.dari.spring.entity.User;
 import tn.dari.spring.repository.AdsRepository;
 import tn.dari.spring.service.AdsService;
-import tn.dari.spring.service.AdsServiceImp;
+import tn.dari.spring.utility.BadWordsException;
 @RestController
 public class AdsController  {
 
+	@Autowired 
+	AdsService adsService ;
 	@Autowired
-	private	AdsRepository adsInterface;
-	@PostMapping(value="listAds")	
+	AdsRepository adsInterface;
 	
-	public Ads addAds(@RequestBody Ads a) {
-		return adsInterface.save(a);
-	}
-	@GetMapping(value="listAds")
-	
-	public List<Ads> retrieveAll() {
+	@PostMapping(value="postAds")	
+	public Ads addAds(@RequestBody Ads a) throws BadWordsException {
+			adsService.addAds(a);
+			return a;
 
-		return (List<Ads>) adsInterface.findAll();
+	}
+	
+	@GetMapping(value="getAllAds")
+	public List<Ads> retrieveAll() {
+		return (List<Ads>) adsService.retrieveAll();
 	} 
-	@PutMapping(value="listAds/{id}")
-	 
-	public Ads updateAds(@PathVariable(name="id") Long id ,@RequestBody Ads a) {
-		a.setId4(id);
-		return adsInterface.save(a);
-	}
-	@DeleteMapping(value="listAds/{id}")
 	
+	@PutMapping(value="putAds/{id}")	 
+	public Ads updateAds(@PathVariable(name="id") Long id ,@RequestBody Ads a) throws Exception {
+	//	a.setId4(id);
+		return adsService.updateAds(id, a);
+	}
+		
+	@DeleteMapping(value="deleteAds/{id}")
 	public void deleteAds(@PathVariable(name="id") Long id) {
-		adsInterface.deleteById(id);	
+		adsService.deleteAds(id);	
 	}
-	@GetMapping(value="listAds/{id}")
 	
+	@GetMapping(value="getAdsById/{id}")
 	public Ads retrieveById(@PathVariable(name="id") Long id) {
 		Ads ads=adsInterface.findById(id).get();
 		if(ads!=null)
 			return ads;
 		return null;
 	}
-/*	@PostMapping()
-public void uploadFile(@RequestParam ("file") MultipartFile file) throws IllegalStateException, IOException {
-		
-		adsServiceImp.uploadFile(file);
-}*/
-/*	@GetMapping(value="/mediaAds/{id}",produces=MediaType.IMAGE_PNG_VALUE)
-	public byte[] getMedia(@PathVariable("id") Long id) throws Exception {
-		Ads a = adsInterface.findById(id).get();
-		return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/mediaAds/products"+a.getMedia()));
 
+	@GetMapping("/numberOfAds")	
+	@ResponseBody
+	public Long countAds() {
+		Long count= adsService.countAds();
+		return count;
 	}
-		//@RestResource(path="/photo")
-	@PostMapping(path="/mediaAds/{id}")
-	public void uploadPhoto(MultipartFile file, @PathVariable Long id) throws Exception {
-	Ads a = adsInterface.findById(id).get();
-	a.setMedia(id+".png");
-	Files.write(Paths.get(System.getProperty("user.home")+"/AdsMedia/products"+a.getMedia()),file.getBytes());
-	adsInterface.save(a);
-	}*/
-	/*@PostMapping("/rest/uploadMultiFiles")
-    public ResponseEntity<?> uploadFileMulti(@ModelAttribute UploadForm form) throws Exception {
- 
-        System.out.println("Description:" + form.getDescription());
- 
-        String result = null;
-        try {
- 
-            result = this.saveUploadedFiles(form.getFiles());
- 
-        }
-        // Here Catch IOException only.
-        // Other Exceptions catch by RestGlobalExceptionHandler class.
-        catch (IOException e) {
-            e.printStackTrace();
-            return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.BAD_REQUEST);
-        }*/
 	
+	@GetMapping("/numberAdsByCategory/{Category}")	
+	@ResponseBody
+	public int countAdsByCategory(@PathVariable("Category") String category) {
+				int countAdsByCategory= adsService.findAdsByCategory(Category.valueOf(category));
+		return countAdsByCategory;
+	}
 	
-	
-	
-	
+	@GetMapping("/numberAdsByTransaction/{Transaction}")	
+	@ResponseBody
+	public int countAdsByTransaction(@PathVariable("Transaction") String transaction) {
+				int countAdsByTransaction= adsService.findAdsByTransaction(Transaction.valueOf(transaction));
+		return countAdsByTransaction;
+	}
+
 }

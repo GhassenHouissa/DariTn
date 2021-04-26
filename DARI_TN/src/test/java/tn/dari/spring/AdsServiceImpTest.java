@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.service.AdsService;
+import tn.dari.spring.utility.BadWordsException;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AdsServiceImpTest {
@@ -19,10 +20,10 @@ public class AdsServiceImpTest {
 	@Autowired
 	AdsService x1;
 	@Test
-	public void save() {
+	public void save() throws BadWordsException {
 		Ads a= new Ads();
 		a.setTitle4("Maison1");
-		a=x1.addAds(a);
+	//	a=x1.addAds(a);
 		
 	} 
 	

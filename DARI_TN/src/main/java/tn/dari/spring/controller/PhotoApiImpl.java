@@ -13,6 +13,7 @@ import com.flickr4java.flickr.FlickrException;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.service.SaveAdsPhotoServiceImpl;
+import tn.dari.spring.utility.BadWordsException;
 
 @RestController
 public class PhotoApiImpl implements PhotoApi {
@@ -20,8 +21,9 @@ public class PhotoApiImpl implements PhotoApi {
 	private SaveAdsPhotoServiceImpl saveAdsPhotoServiceImpl;
 	@PostMapping(path="/photos/{id}")
 	@Override
-	public Ads savePhoto(@PathVariable Long id,@RequestPart("file") MultipartFile media) throws FlickrException, IOException {
+	public Ads savePhoto(@PathVariable Long id,@RequestPart("file") MultipartFile media) throws FlickrException, IOException, BadWordsException {
 		return saveAdsPhotoServiceImpl.savePhoto(id, media.getInputStream(), "test");
 	}
 
+	
 }

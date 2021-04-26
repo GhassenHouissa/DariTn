@@ -15,6 +15,7 @@ import com.flickr4java.flickr.FlickrException;
 import lombok.extern.slf4j.Slf4j;
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.repository.AdsRepository;
+import tn.dari.spring.utility.BadWordsException;
 
 @Service
 @Slf4j
@@ -25,7 +26,7 @@ public class SaveAdsPhotoServiceImpl implements SaveAdsPhotoService{
 	@Autowired
 	private AdsService adsService;
 	@Override
-	public Ads savePhoto(@PathVariable(name="id") Long id, InputStream media, String titre) throws FlickrException {
+	public Ads savePhoto(@PathVariable(name="id") Long id, InputStream media, String titre) throws FlickrException, BadWordsException {
 		Ads ads= adsService.retrieveById(id);
 	String urlPhoto =flickrService.saveMedia(media, titre);
 	if(StringUtils.hasLength(urlPhoto)) {
@@ -34,5 +35,7 @@ public class SaveAdsPhotoServiceImpl implements SaveAdsPhotoService{
 		ads.setMedia(urlPhoto);
 	return adsService.addAds(ads);
 	}
+
+	
 
 }

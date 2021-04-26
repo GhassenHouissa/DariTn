@@ -1,4 +1,4 @@
-package tn.dari.spring.service;
+package tn.dari.spring.utility;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
-@Service
+@Service 
 public class BadWordsAds {
 	   static ArrayList<String> words = new ArrayList<String>();
 	    
@@ -16,7 +16,7 @@ public class BadWordsAds {
 	    
 	    public static void loadConfigs() {
 	        try {
-	            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(ResourceUtils.getFile("E:\\FiltreBadWords\\badWords.csv"))));
+	            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(ResourceUtils.getFile("classpath:Word_Filter.csv"))));
 	            String line = "";
 	            int counter = 0;
 	            while((line = reader.readLine()) != null) {
@@ -88,11 +88,10 @@ public class BadWordsAds {
 
 	    }
 
-	    public static String filterText(String input)  {
+	    public static String filterText(String input) throws BadWordsException  {
 	        ArrayList<String> badWords = badWordsFound(input);
 	        if(badWords.size() > 0) {
-	            return "This message was blocked because a bad word was found. If you believe this word should not be blocked, please message support.";
-	        }
+throw new BadWordsException("This ads was blocked because a bad word was found. If you believe this word should not be blocked, please message support.")	 ;       }
 	        return input;
 	    }
 }

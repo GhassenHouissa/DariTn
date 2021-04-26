@@ -8,6 +8,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import tn.dari.spring.config.SecSecuityConfig;
+import tn.dari.spring.utility.BadWordsAds;
 
 public class AppInitializer implements WebApplicationInitializer {
 	 @Override
@@ -20,5 +21,7 @@ public class AppInitializer implements WebApplicationInitializer {
 
 	        sc.addFilter("securityFilter", new DelegatingFilterProxy("springSecurityFilterChain"))
 	          .addMappingForUrlPatterns(null, false, "/*");
+	   	 BadWordsAds.loadConfigs();
+
 	    }
 }

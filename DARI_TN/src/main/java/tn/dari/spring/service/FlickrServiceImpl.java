@@ -32,7 +32,7 @@ public class FlickrServiceImpl implements FlickrService {
 
 	  @Value("${flickr.appSecret}")
 	  private String appSecret;
-
+//@Autowired
 	  private Flickr flickr;
 
 
@@ -51,7 +51,7 @@ public class FlickrServiceImpl implements FlickrService {
 	 private void connect() throws InterruptedException, ExecutionException, IOException, FlickrException {
 		    flickr = new Flickr(apiKey, apiSecret, new REST());
 		    Auth auth = new Auth();
-		    auth.setPermission(Permission.READ);
+		    auth.setPermission(Permission.DELETE);
 		    auth.setToken(appKey);
 		    auth.setTokenSecret(appSecret);
 		    RequestContext requestContext = RequestContext.getRequestContext();
