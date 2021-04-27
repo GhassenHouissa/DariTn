@@ -3,6 +3,16 @@ package tn.dari.spring.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.OneToMany;
+
+
+	
+	//@OneToMany
+	//Visit visit;
+	
+	//@OneToMany
+	//Bank bank;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,6 +23,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+		
+
+
 @Entity
 @Table(name = "T_USER")
 public class User implements Serializable {
@@ -22,15 +35,15 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Long Id;
-	@Column
+	@Column(nullable=false)
 	private String firstName;
-	@Column
+	@Column(nullable=false)
 	private String lastName;
-	@Column
+	@Column(nullable=false)
 	private String email;
-	@Column
+	@Column(nullable=false)
 	private String login;
-	@Column
+	@Column(nullable=false)
 	private String password;
 
 
@@ -74,7 +87,7 @@ public class User implements Serializable {
 	@OneToMany
 	private List<Claim> claims;
 	@OneToMany
-	private List<Visit> visits;
+	private List<VisiteRDV> visits;
 //			private List<Favorites> favorites;
 	@OneToMany
 	private List<Bank> banks;
