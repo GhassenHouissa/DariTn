@@ -29,7 +29,10 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/main.js"
+              "src/assets/js/main.js",
+              "src/assets/vendor/swiper/swiper-bundle.min.js",
+              "src/assets/vendor/php-email-form/validate.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
 
                       ]
           },
@@ -99,7 +102,13 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/main.js"
+              "src/assets/js/main.js",
+              "src/assets/vendor/swiper/swiper-bundle.min.js",
+              "src/assets/vendor/php-email-form/validate.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+
+
+
 
             ]
           }

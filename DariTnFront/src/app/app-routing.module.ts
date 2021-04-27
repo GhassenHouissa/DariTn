@@ -25,7 +25,7 @@ const routes: Routes = [
  { path :'Agent-Single', component: AgentSingleComponent},
  { path :'Contact', component: ContactComponent},
  { path :'search', component: SearchComponentComponent},
- { path :'**', component: ErrorComponent},
+ 
 
 ];
 
