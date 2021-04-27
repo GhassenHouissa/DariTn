@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.dari.spring.entity.Ads;
 import tn.dari.spring.entity.EmailTemplate;
+import tn.dari.spring.entity.Orders;
 import tn.dari.spring.entity.Search;
 import tn.dari.spring.repository.Ads_interface;
 import tn.dari.spring.repository.SearchRepository;
@@ -34,11 +37,18 @@ public class AdsRestController {
 	@Autowired
 	private EmailService emailService;
 	
-	EmailTemplate emailTemplate = new EmailTemplate("roua.mbarki1@esprit.tn","DARI.TN : Réduction des prix ", "BONJOUR , Consulter notre site daritn pour profiter des offres de réductions pour quelques annonces ");
+	EmailTemplate emailTemplate = new EmailTemplate("chalouatiwiem01@gmail.com","DARI.TN : Réduction des prix ", "BONJOUR , Consulter notre site daritn pour profiter des offres de réductions pour quelques annonces ");
 	
-	EmailTemplate emailTemplatee = new EmailTemplate("roua.mbarki1@esprit.tn","DARI.TN : Augmentation des prix", "BONJOUR , Consulter notre site daritn pour voir les changement des offres d'augmentation  pour quelques annonces ");
+	EmailTemplate emailTemplatee = new EmailTemplate("chalouatiwiem01@gmail.com","DARI.TN : Augmentation des prix", "BONJOUR , Consulter notre site daritn pour voir les changement des offres d'augmentation  pour quelques annonces ");
 	
 	
+	// http://localhost:8082/DARITN/servlet/add-ads
+	@PostMapping("add-ads")
+	@ResponseBody
+	public Ads addAds(@RequestBody Ads a) {
+		Ads ads = as.addAds(a);         
+	return ads;
+	}
 	
 	
 	//http://localhost:8082/DARITN/servlet/show-all-ads

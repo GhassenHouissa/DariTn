@@ -33,12 +33,12 @@ public class SearchServiceImplTest {
 		ss.addSearch(s);
 	}*/
 	
-	@Test
+	/*@Test
 	public void deleteSearchTest(){
 		l.info("search deleted: "+ ss.deleteSearch(2));
 		 
 		
-	}
+	}*/
 	
 	
 	/*@Test 

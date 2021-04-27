@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import tn.dari.spring.entity.Ads;
@@ -47,9 +48,10 @@ public class SearchServiceImpl implements ISearchService {
 	
 	
 	@Override
-	public boolean deleteSearch(long id) {
+	public boolean deleteSearch(long id , long userId) {
 		
-		if(sr.existsById(id)){
+		Search search = sr.findById(id).get();
+		if (search.getUser().getId()==userId){
 			sr.deleteById(id);
 			return true;
 		}
@@ -89,6 +91,7 @@ public class SearchServiceImpl implements ISearchService {
 	
 	//**********************************************************nouvelle méthode********************************
 	@Override
+	//@Scheduled 
 	public Search addSearch1(Search rech, User u) {
 		//le type introduit :
 				String t = rech.getType();

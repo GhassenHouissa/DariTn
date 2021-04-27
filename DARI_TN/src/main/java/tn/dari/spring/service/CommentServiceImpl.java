@@ -29,11 +29,6 @@ public class CommentServiceImpl implements ICommentService{
 	
 	private static final Logger l = LogManager.getLogger(CommentServiceImpl.class);
 	
-	/*@Override
-	public Comment addComment(Comment c) {
-		return cr.save(c);
-		
-	}*/
 
 	@Override
 	public boolean deleteComment(long id , long userId) {

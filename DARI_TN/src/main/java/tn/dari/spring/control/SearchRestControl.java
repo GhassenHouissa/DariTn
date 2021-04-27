@@ -35,12 +35,14 @@ public class SearchRestControl {
 //*****************delete*********************************************************
 			
 			
-			// http://localhost:8082/DARI_TN/servlet/remove-search/{search-id}
-			@DeleteMapping("/remove-search/{search-id}")
+			// http://localhost:8082/DARITN/servlet/remove-search/{search-id}/{user-id}
+			@DeleteMapping("/remove-search/{search-id}/{user-id}")
 			@ResponseBody
-			public void removeSearch(@PathVariable("search-id") long searchId) {
-				searchService.deleteSearch(searchId);       
+			public void removeSearch(@PathVariable("search-id") long searchId, @PathVariable("user-id") long userId) {
+				searchService.deleteSearch(searchId, userId);       
 			}
+			
+			
 			
 //********************************update*****************************************
 			
