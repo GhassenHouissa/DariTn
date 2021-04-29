@@ -22,6 +22,8 @@ import { BlogSingleComponent } from './blog-single/blog-single.component';
 import { AgentSingleComponent } from './agent-single/agent-single.component';
 import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { ContactComponent } from './contact/contact.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({  
   declarations: [
@@ -44,7 +46,10 @@ import { ContactComponent } from './contact/contact.component';
     BlogSingleComponent,
     AgentSingleComponent,
     AgentGridComponent,
-    ContactComponent
+    ContactComponent,
+    SignInComponent,
+    SignUpComponent,
+    
   ],
   imports: [
     BrowserModule,
