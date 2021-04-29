@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DariTnFront';
+  //title = 'DariTnFront';
+  title: string;
+
+  constructor(){
+    this.title='spring Boot - Angular Application';
+  }
 }

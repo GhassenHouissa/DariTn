@@ -12,6 +12,7 @@ import { AgentComponentComponent } from './agent-component/agent-component.compo
 import { LatestNewsComponentComponent } from './latest-news-component/latest-news-component.component';
 import { TestimonialsComponentComponent } from './testimonials-component/testimonials-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { HttpClientModule } from '@angular/common/http';
 import { PropertyGridComponent } from './property-grid/property-grid.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -24,6 +25,7 @@ import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({  
   declarations: [
@@ -53,7 +55,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
