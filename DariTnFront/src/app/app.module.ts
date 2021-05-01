@@ -54,6 +54,8 @@ import { ClaimsComponent } from './claims/claims.component';
     ListBankComponent,
     ClaimsComponent,
     
+
+    
   ],
   imports: [
     BrowserModule,
