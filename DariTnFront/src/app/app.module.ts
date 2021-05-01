@@ -24,6 +24,8 @@ import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ListBankComponent } from './list-bank/list-bank.component';
+import { ClaimsComponent } from './claims/claims.component';
 
 @NgModule({  
   declarations: [
@@ -49,6 +51,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ContactComponent,
     SignInComponent,
     SignUpComponent,
+    ListBankComponent,
+    ClaimsComponent,
     
   ],
   imports: [
