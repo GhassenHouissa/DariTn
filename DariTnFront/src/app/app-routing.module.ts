@@ -9,6 +9,7 @@ import { ClaimsComponent } from './claims/claims.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
+import { NotificationComponent } from './notification/notification.component';
 import { PropertyGridComponent } from './property-grid/property-grid.component';
 import { PropertySingleComponent } from './property-single/property-single.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
  { path : 'Sign In', component : SignInComponent},
  { path : 'Sign Up', component : SignUpComponent},
  { path : 'Claims', component : ClaimsComponent},
+ { path : 'Notification', component : NotificationComponent},
 
 
 

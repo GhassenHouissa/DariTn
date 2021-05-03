@@ -26,6 +26,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ListBankComponent } from './list-bank/list-bank.component';
 import { ClaimsComponent } from './claims/claims.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({  
   declarations: [
@@ -53,6 +54,7 @@ import { ClaimsComponent } from './claims/claims.component';
     SignUpComponent,
     ListBankComponent,
     ClaimsComponent,
+    NotificationComponent,
     
 
     
