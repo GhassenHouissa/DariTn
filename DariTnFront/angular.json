@@ -28,12 +28,16 @@
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
               "src/styles.css",
+
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/main.js",
+              "src/assets/js/login.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js",
               "src/assets/vendor/php-email-form/validate.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
@@ -108,8 +112,10 @@
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/js/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/main.js",
+              "src/assets/js/login.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js",
               "src/assets/vendor/php-email-form/validate.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"

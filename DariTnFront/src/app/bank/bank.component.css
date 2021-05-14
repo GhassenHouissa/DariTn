@@ -1,0 +1,27 @@
+
+        body{
+            background-color: rgb(2, 105, 109);
+            margin: 30px;
+
+        }
+
+        h1{
+            font-style: serif;
+            margin: 20px;
+        }
+
+
+        p{
+            font-size: 15px;
+            font-style: Avantgarde;
+            width:75%;
+            margin: 40px;
+        }
+        legend{
+            font-size: 20px;
+            margin: 40px;
+        }
+        a{
+            margin: 40px;
+        }
+

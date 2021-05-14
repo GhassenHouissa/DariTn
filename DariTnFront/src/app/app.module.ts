@@ -50,6 +50,10 @@ import { UpdateAdsComponent } from './update-ads/update-ads.component';
 
 /* /test */
 
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ListBankComponent } from './list-bank/list-bank.component';
+import { ClaimsComponent } from './claims/claims.component';
 
 @NgModule({  
   declarations: [
@@ -81,6 +85,13 @@ import { UpdateAdsComponent } from './update-ads/update-ads.component';
     Details2Component,
     Details3Component,
     UpdateAdsComponent, 
+    SignInComponent,
+    SignUpComponent,
+    ListBankComponent,
+    ClaimsComponent,
+    
+
+    
   ],
   imports: [
     BrowserModule,
