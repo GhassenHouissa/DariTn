@@ -22,6 +22,34 @@ import { BlogSingleComponent } from './blog-single/blog-single.component';
 import { AgentSingleComponent } from './agent-single/agent-single.component';
 import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { ContactComponent } from './contact/contact.component';
+import { ListePropertyComponent } from './liste-property/liste-property.component';
+import { DetailsListePropertyComponent } from './details-liste-property/details-liste-property.component';
+import { PagingComponent } from './paging/paging.component';
+import { BouttonActionComponent } from './boutton-action/boutton-action.component';
+import { NewPropertyComponent } from './new-property/new-property.component';
+import { Details2Component } from './details2/details2.component';
+import { Details3Component } from './details3/details3.component';
+/* test */
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { LabelModule } from '@progress/kendo-angular-label';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { UploadsModule, UploadModule } from '@progress/kendo-angular-upload';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+
+import { UploadInterceptor } from '../app/services/upload-interceptor';
+
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToolBarModule } from '@progress/kendo-angular-toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdateAdsComponent } from './update-ads/update-ads.component';
+
+
+
+/* /test */
+
 
 @NgModule({  
   declarations: [
@@ -44,13 +72,39 @@ import { ContactComponent } from './contact/contact.component';
     BlogSingleComponent,
     AgentSingleComponent,
     AgentGridComponent,
-    ContactComponent
+    ContactComponent,
+    ListePropertyComponent,
+    DetailsListePropertyComponent,
+    PagingComponent,
+    BouttonActionComponent,
+    NewPropertyComponent,
+    Details2Component,
+    Details3Component,
+    UpdateAdsComponent, 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LayoutModule,
+    InputsModule,
+    LabelModule,
+    UploadsModule,
+    DropDownsModule,
+    DateInputsModule,
+    ButtonsModule,
+    ToolBarModule,
+    UploadModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UploadInterceptor,
+      multi: true
+    }  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

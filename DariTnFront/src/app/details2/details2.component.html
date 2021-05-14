@@ -1,0 +1,45 @@
+<ng-container [formGroup]="personalDetails">
+   
+    <br>
+    
+    <kendo-formfield orientation="horizontal" class="payment-type">
+
+        <label class="k-label">Select Transaction Type</label><br>
+        <ul class="k-radio-list k-list-horizontal">        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <li class="k-radio-item">
+                <input type="radio" #visa value="visa" kendoRadioButton formControlName="paymentType"  [(ngModel)]="ads.transaction4" id="visa" />
+                <label [for]="visa" class="card visa"></label>
+            </li>
+
+            <li class="k-radio-item">
+                <input type="radio" #masterCard value="masterCard" kendoRadioButton formControlName="paymentType" [(ngModel)]="ads.transaction4" id="masterCard"/>
+                <label [for]="masterCard" class="card mastercard"></label>
+            </li>
+
+          
+        </ul>
+        <kendo-formerror>Transaction is required</kendo-formerror>
+
+    </kendo-formfield>
+    
+    
+    
+    <kendo-formfield showHints="initial" showErrors="initial">
+        <kendo-label [for]="country" text="Category" [(ngModel)]="ads.category4" id="category4" ></kendo-label>
+        <kendo-autocomplete
+            #country
+            [data]="countries"
+            formControlName="country"
+        >
+        </kendo-autocomplete>
+        <kendo-formerror>Category is required</kendo-formerror>
+    </kendo-formfield> <br>
+
+
+
+
+
+
+  
+</ng-container>

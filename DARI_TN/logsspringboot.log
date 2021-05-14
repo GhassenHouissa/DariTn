@@ -1,33 +1,59 @@
-2021-04-27 02:32:23.897  INFO 11392 --- [restartedMain] tn.dari.spring.DariTnApplication         : Starting DariTnApplication using Java 1.8.0_241 on DESKTOP-UD6HGVC with PID 11392 (C:\Users\Lenevo\git\DariTn\DARI_TN\target\classes started by Lenevo in C:\Users\Lenevo\git\DariTn\DARI_TN)
-2021-04-27 02:32:23.918  INFO 11392 --- [restartedMain] tn.dari.spring.DariTnApplication         : No active profile set, falling back to default profiles: default
-2021-04-27 02:32:24.021  INFO 11392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-04-27 02:32:24.023  INFO 11392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-04-27 02:32:25.433  INFO 11392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-27 02:32:25.561  INFO 11392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 9 JPA repository interfaces.
-2021-04-27 02:32:26.060  INFO 11392 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4ccbed50' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-04-27 02:32:26.067  INFO 11392 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-04-27 02:32:26.561  INFO 11392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2021-04-27 02:32:26.571  INFO 11392 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-04-27 02:32:26.572  INFO 11392 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-04-27 02:32:26.698  INFO 11392 --- [restartedMain] o.a.c.c.C.[.[localhost].[/daritn]        : Initializing Spring embedded WebApplicationContext
-2021-04-27 02:32:26.699  INFO 11392 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2671 ms
-2021-04-27 02:32:27.112  INFO 11392 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-27 02:32:27.228  INFO 11392 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-04-27 02:32:27.795  INFO 11392 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-27 02:32:27.936  INFO 11392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-27 02:32:29.303  INFO 11392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-27 02:32:29.332  INFO 11392 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-04-27 02:32:35.404  INFO 11392 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-27 02:32:35.435  INFO 11392 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-27 02:32:36.485  INFO 11392 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-04-27 02:32:36.981  WARN 11392 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-27 02:32:37.247  INFO 11392 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.apache.logging.log4j.Logger tn.dari.spring.service.VisiteRDVImplService.l
-2021-04-27 02:32:38.261  INFO 11392 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c28013d, org.springframework.security.web.context.SecurityContextPersistenceFilter@2728d169, org.springframework.security.web.header.HeaderWriterFilter@75b83c93, org.springframework.web.filter.CorsFilter@7053d12b, org.springframework.security.web.authentication.logout.LogoutFilter@29ccdd53, tn.dari.spring.config.JwtRequestFilter@6d6be426, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d28a0ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72ae9ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@706c585d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72040a6e, org.springframework.security.web.session.SessionManagementFilter@6a26c2be, org.springframework.security.web.access.ExceptionTranslationFilter@e9d9849, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e1900fe]
-2021-04-27 02:32:38.417  INFO 11392 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-27 02:32:39.359  INFO 11392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/daritn'
-2021-04-27 02:32:39.406  INFO 11392 --- [restartedMain] tn.dari.spring.DariTnApplication         : Started DariTnApplication in 16.049 seconds (JVM running for 17.453)
-2021-04-27 02:32:47.044  INFO 11392 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-04-27 02:32:47.363  INFO 11392 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-27 02:32:47.370  INFO 11392 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-04-27 02:32:47.374  INFO 11392 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-04-27 02:32:47.397  INFO 11392 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-13 04:09:30.378  INFO 13384 --- [restartedMain] tn.dari.spring.DariTnApplication         : Starting DariTnApplication using Java 1.8.0_241 on DESKTOP-UD6HGVC with PID 13384 (C:\Users\Lenevo\git\DariTn\DARI_TN\target\classes started by Lenevo in C:\Users\Lenevo\git\DariTn\DARI_TN)
+2021-05-13 04:09:30.727  INFO 13384 --- [restartedMain] tn.dari.spring.DariTnApplication         : No active profile set, falling back to default profiles: default
+2021-05-13 04:09:30.798  INFO 13384 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-13 04:09:30.801  INFO 13384 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-13 04:09:31.684  INFO 13384 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-13 04:09:31.802  INFO 13384 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 9 JPA repository interfaces.
+2021-05-13 04:09:32.225  INFO 13384 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@718503e5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-13 04:09:32.231  INFO 13384 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-13 04:09:32.653  INFO 13384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2021-05-13 04:09:32.694  INFO 13384 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-13 04:09:32.695  INFO 13384 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-05-13 04:09:32.816  INFO 13384 --- [restartedMain] o.a.c.c.C.[.[localhost].[/daritn]        : Initializing Spring embedded WebApplicationContext
+2021-05-13 04:09:32.816  INFO 13384 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2014 ms
+2021-05-13 04:09:33.148  INFO 13384 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-13 04:09:33.205  INFO 13384 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-05-13 04:09:33.352  INFO 13384 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-13 04:09:33.466  INFO 13384 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-13 04:09:35.032  INFO 13384 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-13 04:09:35.102  INFO 13384 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-05-13 04:09:41.636  INFO 13384 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-13 04:09:41.706  INFO 13384 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-13 04:09:42.918  INFO 13384 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-13 04:09:43.736  WARN 13384 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-13 04:09:44.070  INFO 13384 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.apache.logging.log4j.Logger tn.dari.spring.service.VisiteRDVImplService.l
+2021-05-13 04:09:45.082  INFO 13384 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3df2a792, org.springframework.security.web.context.SecurityContextPersistenceFilter@4111c272, org.springframework.security.web.header.HeaderWriterFilter@737f433b, org.springframework.web.filter.CorsFilter@7e9b1065, org.springframework.security.web.authentication.logout.LogoutFilter@42fcf913, tn.dari.spring.config.JwtRequestFilter@5305d79c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39c644d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35d917f6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@450b6f67, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41d7c1eb, org.springframework.security.web.session.SessionManagementFilter@4fd0c7c3, org.springframework.security.web.access.ExceptionTranslationFilter@26558fae, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d440fb6]
+2021-05-13 04:09:45.249  INFO 13384 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-13 04:09:46.658  INFO 13384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/daritn'
+2021-05-13 04:09:46.684  INFO 13384 --- [restartedMain] tn.dari.spring.DariTnApplication         : Started DariTnApplication in 16.722 seconds (JVM running for 17.926)
+2021-05-13 04:10:11.612  INFO 13384 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[localhost].[/daritn]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-13 04:10:11.613  INFO 13384 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-13 04:10:11.615  INFO 13384 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-05-13 04:10:11.662  WARN 13384 --- [http-nio-9090-exec-1] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:10:12.121  WARN 13384 --- [http-nio-9090-exec-2] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:10:32.070  WARN 13384 --- [http-nio-9090-exec-3] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:10:32.130  WARN 13384 --- [http-nio-9090-exec-4] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:14:02.233  WARN 13384 --- [http-nio-9090-exec-7] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:14:02.257  WARN 13384 --- [http-nio-9090-exec-8] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:16:41.200  WARN 13384 --- [http-nio-9090-exec-10] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:16:41.228  WARN 13384 --- [http-nio-9090-exec-1] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:16:47.226  WARN 13384 --- [http-nio-9090-exec-2] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:16:47.283  WARN 13384 --- [http-nio-9090-exec-3] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:16:57.393  WARN 13384 --- [http-nio-9090-exec-4] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:05.476  WARN 13384 --- [http-nio-9090-exec-6] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:07.981  WARN 13384 --- [http-nio-9090-exec-7] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:08.006  WARN 13384 --- [http-nio-9090-exec-8] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:15.097  WARN 13384 --- [http-nio-9090-exec-10] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:15.120  WARN 13384 --- [http-nio-9090-exec-1] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:15.133  WARN 13384 --- [http-nio-9090-exec-2] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:59.338  WARN 13384 --- [http-nio-9090-exec-3] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:17:59.355  WARN 13384 --- [http-nio-9090-exec-4] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:19:33.658  WARN 13384 --- [http-nio-9090-exec-6] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:19:33.673  WARN 13384 --- [http-nio-9090-exec-7] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:20:04.718  WARN 13384 --- [http-nio-9090-exec-8] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:20:04.731  WARN 13384 --- [http-nio-9090-exec-9] tn.dari.spring.config.JwtRequestFilter   : JWT Token does not begin with Bearer String
+2021-05-13 04:20:38.238  INFO 13384 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-05-13 04:20:38.544  INFO 13384 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-13 04:20:38.551  INFO 13384 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-13 04:20:38.563  INFO 13384 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-13 04:20:38.586  INFO 13384 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

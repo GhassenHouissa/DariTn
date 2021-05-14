@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import tn.dari.spring.entity.User;
 import tn.dari.spring.repository.AdsRepository;
 import tn.dari.spring.service.AdsService;
 import tn.dari.spring.utility.BadWordsException;
+@CrossOrigin("*")
 @RestController
 public class AdsController  {
 
@@ -40,10 +42,10 @@ public class AdsController  {
 		return (List<Ads>) adsService.retrieveAll();
 	} 
 	
-	@PutMapping(value="putAds/{id}")	 
-	public Ads updateAds(@PathVariable(name="id") Long id ,@RequestBody Ads a) throws Exception {
+	@PutMapping(value="putAds")	 
+	public Ads updateAds(@RequestBody Ads a) throws Exception {
 	//	a.setId4(id);
-		return adsService.updateAds(id, a);
+		return adsService.updateAds( a);
 	}
 		
 	@DeleteMapping(value="deleteAds/{id}")
@@ -51,7 +53,7 @@ public class AdsController  {
 		adsService.deleteAds(id);	
 	}
 	
-	@GetMapping(value="getAdsById/{id}")
+	@GetMapping(value="/getAdsById/{id}")
 	public Ads retrieveById(@PathVariable(name="id") Long id) {
 		Ads ads=adsInterface.findById(id).get();
 		if(ads!=null)

@@ -1,5 +1,6 @@
 package tn.dari.spring.service;
 
+import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -8,6 +9,7 @@ import javax.persistence.PrePersist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,6 +19,8 @@ import tn.dari.spring.entity.Transaction;
 import tn.dari.spring.repository.AdsRepository;
 import tn.dari.spring.utility.BadWordsAds;
 import tn.dari.spring.utility.BadWordsException;
+@CrossOrigin("*")
+
 @Service
 public class AdsServiceImp implements AdsService{
 	@Autowired
@@ -40,8 +44,8 @@ return adsInterface.save(a);
 
 
 @Override 
-public Ads updateAds(@PathVariable(name="id") Long id ,@RequestBody Ads a) throws BadWordsException {
-	a.setId4(id);
+public Ads updateAds(@RequestBody Ads a) throws BadWordsException {
+	//a.setId4(id);
 	BadWordsAds.loadConfigs();	
 	a.setTitle4(BadWordsAds.filterText(a.getTitle4()));
 	a.setDescription4(BadWordsAds.filterText(a.getDescription4()));
@@ -86,6 +90,9 @@ public int findAdsByTransaction(Transaction transaction) {
 	 int countAdsByTransaction =  listAdsByTransaction.size();
 	return countAdsByTransaction;
 }
+
+
+
 
 }
 

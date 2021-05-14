@@ -1,0 +1,53 @@
+<br><br><br><br>
+
+
+<div class="example">
+    
+  <kendo-stepper  #stepper [steps]="steps" stepType="full" [(currentStep)]="currentStep"> </kendo-stepper>
+  <form class="k-form example2 " [formGroup]="form" >
+      <app-details-liste-property *ngIf="currentStep === 0" [propertyDetails]="currentGroup"> </app-details-liste-property>
+
+      <app-details2  *ngIf="currentStep === 1" [personalDetails]="currentGroup"> </app-details2>
+
+      <app-details3 *ngIf="currentStep === 2" [paymentDetails]="currentGroup"> </app-details3>
+
+      <span class="k-form-separator blue-color"></span>
+ 
+      <div class="k-form-buttons k-buttons-end  ">
+          <span class=" page blue-color">Step {{ currentStep + 1 }} of 3</span>
+          <div>
+              <button class="blue-color prev" *ngIf="currentStep !== 0" (click)="prev()">Previous</button>
+              <button class="blue-color k-primary" (click)="next()" *ngIf="currentStep !== 2">Next</button>
+              <button class="blue-color k-primary" (click)="submit()" *ngIf="currentStep === 2">Submit</button>
+          </div>
+      </div>
+  </form>
+  
+</div>
+
+
+<!-- test -->
+
+
+<!--     <div>
+        <div class="submit-form"> <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" required [(ngModel)]="ads.title4" name="title4"/>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input class="form-control" id="description" required [(ngModel)]="ads.description4" name="description4"/>
+            </div>
+
+            <button (click)="onSubmit()" class="btn btn-success">Submit</button>
+        </div>
+
+
+    </div>
+</div> -->
+<!-- /test -->
+
+
+<app-footer-component></app-footer-component>

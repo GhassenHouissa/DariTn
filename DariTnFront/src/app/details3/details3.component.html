@@ -1,0 +1,80 @@
+
+          <ng-container [formGroup]="paymentDetails">
+            
+
+             <div class="wrap">
+                <kendo-formfield>
+                    <kendo-label  text="Number room"></kendo-label>
+
+<input type="number" id="tentacles" name="tentacles"
+       min="1" max="100" formControlName="roomType">
+
+
+       <kendo-formerror>This field is required</kendo-formerror>
+                </kendo-formfield>
+
+                <kendo-formfield>
+                    <kendo-label  text="Number kitchen"></kendo-label>
+                    <input type="number" id="tentacles" name="tentacles"
+                    min="1" max="100">
+
+                    <kendo-formhint>The last 3 digids on the back</kendo-formhint>
+                    <kendo-formerror>Card CVC Number is required</kendo-formerror>
+                </kendo-formfield>
+
+                
+
+              </div>
+
+
+              <div class="wrap">
+                
+                <kendo-formfield>
+                    <kendo-label text="Number bathroom"></kendo-label>
+                    <input type="number" id="tentacles" name="tentacles"
+                    min="1" max="100">
+
+                    <kendo-formhint>The last 3 digids on the back</kendo-formhint>
+                    <kendo-formerror>Card CVC Number is required</kendo-formerror>
+                </kendo-formfield>
+
+                <kendo-formfield>
+                    <kendo-label  text="Number floor"></kendo-label>
+                    <input type="number" id="tentacles" name="tentacles"
+                    min="1" max="100">
+
+                    <kendo-formhint>The last 3 digids on the back</kendo-formhint>
+                    <kendo-formerror>Card CVC Number is required</kendo-formerror>
+                </kendo-formfield>
+
+            
+
+              </div>
+
+
+
+
+              <div class="wrap">
+             
+
+                <kendo-formfield>
+                    <kendo-label  text="Property area (M)"></kendo-label>
+                    <div class="input-group input-group-sm mb-3">
+                       
+                        <input type="text" class="form-control" aria-label="M" aria-describedby="inputGroup-sizing-sm">
+                      </div>   
+                                  
+                </kendo-formfield>
+                
+                <kendo-formfield>
+                    <kendo-label  text="Price (DT)"></kendo-label>
+                    <div class="input-group input-group-sm mb-3">
+                       
+                        <input type="text" class="form-control" aria-label="DT" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="ads.price4" id="price4">
+                      </div>
+                     
+                </kendo-formfield>
+
+              </div>
+      </ng-container>
+    

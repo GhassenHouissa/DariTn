@@ -12,4 +12,6 @@ import tn.dari.spring.utility.BadWordsException;
 public interface PhotoApi {
 
 	Ads savePhoto(Long id,  MultipartFile media) throws FlickrException, IOException, BadWordsException ;
+
+
 }
