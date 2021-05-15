@@ -25,7 +25,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/chartist/dist/chartist.min.css",
+              "src/assets/scss/material-dashboard.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -34,7 +36,8 @@
               "src/assets/js/login.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js",
               "src/assets/vendor/php-email-form/validate.js",
-              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/chartist/dist/chartist.min.js"
 
                       ]
           },
@@ -99,7 +102,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/chartist/dist/chartist.min.css",
+              "src/assets/scss/material-dashboard.scss"
 
             ],
             "scripts": [
@@ -109,7 +114,9 @@
               "src/assets/js/login.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js",
               "src/assets/vendor/php-email-form/validate.js",
-              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/chartist/dist/chartist.min.js"
+              
 
 
 

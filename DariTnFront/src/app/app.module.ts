@@ -25,6 +25,19 @@ import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+
+ import { UpdateUserComponent } from './update-user/update-user.component'; 
+ 
+
 
 
 
@@ -52,18 +65,42 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     SignInComponent,
     SignUpComponent,
+    DashboardComponent,
+    UserProfileComponent,
+    
+     UpdateUserComponent ,
+    
+    
+    
+
     
     
 
     
   ],
+
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    MatFormFieldModule, 
+    MatButtonModule,
+    MatInputModule,
+    MatRippleModule,
+     
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

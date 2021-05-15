@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { AgentSingleComponent } from './agent-single/agent-single.component';
+import { AuthorizeAdminServiceService } from './authorize-admin-service.service';
 import { BankComponent } from './bank/bank.component';
 import { BlogSingleComponent } from './blog-single/blog-single.component';
+
 import { ClaimsComponent } from './claims/claims.component';
 import { ContactComponent } from './contact/contact.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyGridComponent } from './property-grid/property-grid.component';
@@ -14,6 +17,7 @@ import { PropertySingleComponent } from './property-single/property-single.compo
 import { SearchComponentComponent } from './search-component/search-component.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
  
 const routes: Routes = [
   { path :'',redirectTo:'home',pathMatch:'full'},
@@ -31,6 +35,10 @@ const routes: Routes = [
  { path : 'Sign In', component : SignInComponent},
  { path : 'Sign Up', component : SignUpComponent},
  { path : 'Claims', component : ClaimsComponent},
+ { path : 'Dashboard' , component : DashboardComponent,canActivate:[AuthorizeAdminServiceService]},
+ { path : 'User Profile' , component : UserProfileComponent},
+ { path : 'updateUser' , component : UserProfileComponent}
+ 
 
 
 

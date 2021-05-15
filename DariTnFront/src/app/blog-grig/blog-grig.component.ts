@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-blog-grig',
+  selector: 'appl-blog-grig',
   templateUrl: './blog-grig.component.html',
   styleUrls: ['./blog-grig.component.css']
 })

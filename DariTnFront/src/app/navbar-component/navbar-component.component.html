@@ -108,7 +108,12 @@
           <div class="nav-item" routerLinkActive="active">
             <li class="nav-link " routerLink="/home"><i class="bi bi-house-door-fill"></i></li>
           </div>
-
+          <li class="nav-item" routerLinkActive="active" *ngIf="showDashBoard">
+            <a class="nav-link "  routerLink="/Dashboard" >Dashboard</a>
+          </li>
+          
+          
+         
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link "  routerLink="/about" >About</a>
           </li>
@@ -119,6 +124,10 @@
 
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link " routerLink="/bank">Bank</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link " routerLink="/TEST">TEST</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -139,12 +148,9 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
             <div class="dropdown-menu">
-              
-              <a class="dropdown-item " routerLink="/MyAccount">My Account</a>
-              <a class="dropdown-item " routerLink="/Sign In">Sign In</a>
+              <!-- <a class="dropdown-item" routerLink="/User Profile">User Profile</a> -->
+              <a class="dropdown-item" routerLink="/Sign In">Sign In</a>
               <a class="dropdown-item" routerLink="/Sign Up">Sign Up</a>
-              
-              
             </div>
           </li>
           <!-- <li class="nav-item" routerLinkActive="active">
@@ -153,7 +159,6 @@
         </ul>
 
       </div>
-
       <button type="button" class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
         <i class="bi bi-search" ></i>
       </button>
@@ -161,7 +166,7 @@
       <button type="button" class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" href="#">
         <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success" ></span>
         <i class="bi bi-plus-circle"></i>
-        Sell
+      
       </button>
       
     </div>
