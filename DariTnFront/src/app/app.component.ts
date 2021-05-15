@@ -1,6 +1,11 @@
-import { Component } from '@angular/core';
+
+
 import * as Chartist from 'chartist';
 import { TokenStorageService } from './service/token-storage.service';
+
+import { Component , ViewEncapsulation, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +13,7 @@ import { TokenStorageService } from './service/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   //title = 'DariTnFront';
   title: string;
   private roles: string;
@@ -35,6 +41,12 @@ export class AppComponent {
       this.username = user.username;
     }
   }
+
+  
+
+
+
+
 
   
 }

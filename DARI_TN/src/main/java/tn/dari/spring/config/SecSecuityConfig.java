@@ -73,13 +73,26 @@ public class SecSecuityConfig extends WebSecurityConfigurerAdapter {
 //			.antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/anonymous*").anonymous().antMatchers("/login*").permitAll()
 //				.antMatchers(HttpMethod.DELETE, "/remove-user/{user-id}").permitAll()
 //				.antMatchers(HttpMethod.PUT, "/modify-user").permitAll().antMatchers(HttpMethod.POST, "/add-user")
-//				.permitAll().antMatchers(HttpMethod.GET, "/retrieve-all-users").permitAll()
+				
 ////				.antMatchers(HttpMethod.GET, "/retrieve-all-users/{user-id}").permitAll()
 //				.antMatchers(HttpMethod.GET, "/retrieveUserByLogin/{login}").permitAll()
 //				.antMatchers(HttpMethod.GET, "/retrieveUserByEmail/{email}").permitAll()
-				.antMatchers(HttpMethod.POST, "/add-user").permitAll().antMatchers(HttpMethod.POST, "/authenticate")
-				.permitAll().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/anonymous*").anonymous()
-				.antMatchers("/login*").permitAll() // obligatoire
+	//	.antMatchers(HttpMethod.GET, "/retrieve-all-users").permitAll()
+		.antMatchers(HttpMethod.GET, "/adses").permitAll()
+		.antMatchers(HttpMethod.GET, "/getAllAds").permitAll()
+
+		.antMatchers(HttpMethod.GET, "/getAdsById/{id}").permitAll()
+		.antMatchers(HttpMethod.POST, "/photos/{id}").permitAll()
+		.antMatchers(HttpMethod.POST, "/postAds").permitAll()
+		.antMatchers(HttpMethod.PUT, "/putAds/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/putAds").permitAll()
+
+		.antMatchers(HttpMethod.DELETE, "/deleteAds/{id}").permitAll()
+		
+
+		//.antMatchers(HttpMethod.POST, "/add-user").permitAll().antMatchers(HttpMethod.POST, "/authenticate")
+		//		.permitAll().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/anonymous*").anonymous()
+			//	.antMatchers("/login*").permitAll() // obligatoire
 													// pour
 													// affichage
 													// page

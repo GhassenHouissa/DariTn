@@ -36,6 +36,6 @@ public class SaveAdsPhotoServiceImpl implements SaveAdsPhotoService{
 	return adsService.addAds(ads);
 	}
 
-	
+
 
 }

@@ -24,10 +24,13 @@ import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+@CrossOrigin("*")
 
 @Entity
 @Table(name="ADS2")
@@ -39,40 +42,40 @@ public class Ads implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id4;
-	@Size(min=5, max=60 )
-	@NotBlank(message="please enter title before is required please enter")
-	@Column(name="TITLE", nullable=false)
+	//@Size(min=5, max=60 )
+//	@NotBlank(message="please enter title before is required please enter")
+	@Column(name="TITLE" , nullable=true)
 	private String title4;	
-	@Column(name="DESCRIPTION", length=300, nullable=true)
+	@Column(name="DESCRIPTION" , nullable=true)
 	private String description4;	
-	@Column(name="CATEGORY", nullable=false)
+	@Column(name="CATEGORY" , nullable=true)
 	@Enumerated(EnumType.STRING)
 	private Category category4;	
-	@Column(name="TRANSACTION", nullable=false)
+	@Column(name="TRANSACTION" , nullable=true)
 	@Enumerated(EnumType.STRING)
 	private Transaction transaction4 ;	
-	@Column(name="ROOM", nullable=true)
-	@PositiveOrZero
+	@Column(name="ROOM" , nullable=true)
+	//@PositiveOrZero
 	private int nbRoom4;
-	@Column(name="KITCHEN", nullable=true)
-	@PositiveOrZero
+	@Column(name="KITCHEN" , nullable=true)
+	//@PositiveOrZero
 	private int nbKitchen4;	
-	@Column(name="BATHROOM")
-	@PositiveOrZero
+	@Column(name="BATHROOM" , nullable=true)
+	//@PositiveOrZero
 	private int nbBathRoom4;	
-	@Column(name="FLOOR", nullable=true)
-	@PositiveOrZero
+	@Column(name="FLOOR" , nullable=true)
+	//@PositiveOrZero
 	private int nbFloor4;
-	@Column(name="AREA", nullable=true)
-	@PositiveOrZero
+	@Column(name="AREA" , nullable=true)
+	//@PositiveOrZero
 	private int area4;	
-	@Column(name="MEDIA", nullable=true)
+	@Column(name="MEDIA" , nullable=true)
 	private String media;
-	@NotNull(message="nott egale 0")
-	@Column(name="PRICE", nullable=false)
+//	@NotNull(message="nott egale 0")
+	@Column(name="PRICE" , nullable=true)
 	private Double price4=null;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="DATE", nullable=true)
+	@Column(name="DATE" , nullable=true)
 	private Date datePubl;
 	@PrePersist
 	private void onCreate() {
