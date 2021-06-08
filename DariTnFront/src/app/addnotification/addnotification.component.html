@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title> Notification </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+    <body>
+  <div class="container">
+    <div class="title">Notification</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Notification Subject</span>
+            <input [(ngModel)]="notification.SubjectNotif" name="notication-subject" type="text" placeholder="Enter your notification subject" required>
+          </div>
+          <div class="text-box">
+            <span class="details">Notification Content</span>
+            <textarea [(ngModel)]="notification.DescNotif" name="notification-content" cols="78" rows="10" placeholder="Enter your notification content" required></textarea>
+          </div>
+        </div>
+        <div class="button">
+          <button (click)="addNotifications()" type="button" class="button">Submit Notification</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    </body>
+  </html>

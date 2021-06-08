@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AddclaimComponent } from './addclaim/addclaim.component';
+import { AddnotificationComponent } from './addnotification/addnotification.component';
 import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { AgentSingleComponent } from './agent-single/agent-single.component';
 import { BankComponent } from './bank/bank.component';
@@ -33,9 +35,8 @@ const routes: Routes = [
  { path : 'Sign Up', component : SignUpComponent},
  { path : 'Claims', component : ClaimsComponent},
  { path : 'Notification', component : NotificationComponent},
-
-
-
+ { path : 'AddClaims', component : AddclaimComponent},
+ { path : 'AddNotifications', component : AddnotificationComponent},
  
 
 ];

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationService } from '../sevices/notification.service';
+import { Notification } from '../model/notification';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-notification',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  constructor() { }
+  n:Notification;
+  Tnotifications:Observable<Notification[]>;
+
+  constructor(private servicenotification:NotificationService) { }
+
+  
+  numberNotifications:string;
+  position:Observable<number>;
 
   ngOnInit(): void {
+  this.reloadDataa();
+  this.numberNotifications=this.servicenotification.numberNotifications;
+  this.servicenotification.numbNotifications().subscribe(data=>{this.numberNotifications=data.toString()})
   }
+
+  reloadDataa() {this.Tnotifications= this.servicenotification.getAllNotif();
+  }
+
+  numbrNotifications() {return this.servicenotification.numbNotifications()};
+
+  deleteNotif(IdNotif:number){this.servicenotification.deleteNotifById(IdNotif).subscribe(()=>this.servicenotification.getAllNotif().subscribe(data=>{this.Tnotifications}));
+    }
+
+    refresh(): void {
+      window.location.reload();
+  }
+
+  
+
 
 }

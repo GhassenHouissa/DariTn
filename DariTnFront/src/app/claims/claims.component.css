@@ -6,11 +6,10 @@
   font-family: 'Poppins',sans-serif;
 }
 body{
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 50px;
   background: linear-gradient(135deg, #2eca6a, #9dd1b1);
 }
 .container{
@@ -133,4 +132,26 @@ form .user-details .input-box{
   .container .content {
     flex-direction: column;
   }
+}
+
+.button button{
+  width: 90px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e23636, #ce9393);
+  height: 35px;
+  margin: 0px;
+}
+
+.ref{
+width: 160px;
+height: auto;
+margin-left: 550px;
+
 }

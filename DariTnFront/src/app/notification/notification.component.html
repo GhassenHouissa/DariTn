@@ -1,1 +1,64 @@
-<p>notification works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title> Notifications </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+    <body>
+  <div class="container">
+    <div class="title">Notifications List {{numberNotifications}}</div>  
+    <div class="ref">
+    <button (click)="refresh();" type="button" class="btn btn-success"><span class="material-icons">refresh</span> Refresh </button>
+  </div>
+    <br>
+    <div class="body table-responsive">
+    </div>
+    <div class="body table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+    <tbody>
+        <tr *ngFor="let n of Tnotifications | async">
+            <th scope="row">{{n.IdNotif}}</th>
+            <td>{{n.SubjectNotif}}</td>
+            <td>{{n.DescNotif}}</td>
+            <div class="button">
+            <td><button (click)="deleteNotif(n.IdNotif)" type="button" class="button">DELETE</button></td>
+            </div>
+        </tr>
+    </tbody>
+        </table>
+    </div>
+  </div>
+    </body>
+  </html>
+<!--
+<h2>list des notif:</h2>
+<div class="body table-responsive">
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+<th>Subject</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let n of listNotif | async">
+<th scope="row">{{n.IdNotif}}</th>
+<td>{{n.DescNotif}}</td>
+<td>{{n.SubjectNotif}}</td>
+<td><button type="button" class="btn btn-primary">DELETE</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+-->

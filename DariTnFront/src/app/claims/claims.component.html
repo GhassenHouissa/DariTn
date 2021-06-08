@@ -5,27 +5,44 @@
    <title> Claims </title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-<body>
+    <body>
   <div class="container">
-    <div class="title">Claim</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Claim Subject</span>
-            <input type="text" placeholder="Enter your claim subject" required>
-          </div>
-          <div class="text-box">
-            <span class="details">Claim Content</span>
-            <textarea name="claim-content" id="" cols="78" rows="10" placeholder="Enter your claim content" required></textarea>
-          </div>
-        </div>
-        <div class="button">
-          <input type="submit" value="Submit Claim">
-        </div>
-      </form>
+    <div class="title">Claim List {{numberClaims}}</div>  
+    <div class="ref">
+    <button (click)="refresh();" type="button" class="btn btn-success"><span class="material-icons">refresh</span> Refresh </button>
+  </div>
+    <br>
+    <div class="body table-responsive">
+    </div>
+    <div class="body table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+    <tbody>
+        <tr *ngFor="let c of Tclaims | async">
+            <th scope="row">{{c.id_claim}}</th>
+            <td>{{c.subject_claim}}</td>
+            <td>{{c.description_claim}}</td>
+            <div class="button">
+            <td><button (click)="deleteClaim(c.id_claim)" type="button" class="button">DELETE</button></td>
+            </div>
+        </tr>
+    </tbody>
+        </table>
     </div>
   </div>
+    </body>
+  </html>
+ 
+<!--
+  <button (click)="showPosition(position)" type="button" class="buon">GEO</button>
 
-</body>
-</html>
+-->
+
+

@@ -134,9 +134,23 @@
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link " routerLink="/Contact">Contact</a>
           </li>
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link " routerLink="/Claims">Claims</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Claim</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " routerLink="/AddClaims">Add Claim</a>
+              <a class="dropdown-item " routerLink="/Claims">All Claims</a>
+            </div>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alert</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " routerLink="/AddNotifications">Add Notification</a>
+              <a class="dropdown-item " routerLink="/Notification">All Notification</a>
+            </div>
+          </li>
+
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link " routerLink="/Sign In">Sign In</a>
           </li>
@@ -153,11 +167,13 @@
         <i class="bi bi-plus-circle"></i>
         Sell
       </button>
-      <button type="button" class="icon-button">
+      <!--
+        <button type="button" class="icon-button" >
         <span class="material-icons">notifications</span>
         <span class="icon-button__badge">24</span>
       </button>
-      
+    -->
+
     </div>
   </nav><!-- End Header/Navbar -->
   <!-- <div class="nav-item">

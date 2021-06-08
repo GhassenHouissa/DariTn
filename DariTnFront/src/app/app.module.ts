@@ -28,6 +28,11 @@ import { ListBankComponent } from './list-bank/list-bank.component';
 import { ClaimsComponent } from './claims/claims.component';
 import { NotificationComponent } from './notification/notification.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AddclaimComponent } from './addclaim/addclaim.component';
+import { AddnotificationComponent } from './addnotification/addnotification.component';
+
 @NgModule({  
   declarations: [
     AppComponent,
@@ -55,13 +60,16 @@ import { NotificationComponent } from './notification/notification.component';
     ListBankComponent,
     ClaimsComponent,
     NotificationComponent,
-    
+    AddclaimComponent,
+    AddnotificationComponent,
 
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
