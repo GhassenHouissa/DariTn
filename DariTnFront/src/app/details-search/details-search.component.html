@@ -1,0 +1,23 @@
+<br>
+<br>
+<h2>Search Details</h2>
+
+
+<hr/>
+<div *ngIf="search">
+    <div>
+        <label><b>Type: </b></label> {{search.type}}
+    </div>
+
+    <div>
+        <label><b>Location: </b></label> {{search.location}}
+    </div>
+
+    <div>
+        <label><b>Price: </b></label> {{search.price}}
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="goToList()" class="btn btn-primary">Back to searchs list</button><br>

@@ -26,6 +26,19 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ListBankComponent } from './list-bank/list-bank.component';
 import { ClaimsComponent } from './claims/claims.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListSearchComponent } from './list-search/list-search.component';
+import { CreateSearchComponent } from './create-search/create-search.component';
+import { EditSearchComponent } from './edit-search/edit-search.component';
+import { DetailsSearchComponent } from './details-search/details-search.component';
+import { EditCommentComponent } from './edit-comment/edit-comment.component';
+import { EmailComponent } from './email/email.component';
+import { AdminComponent } from './admin/admin.component';
+import { StatComponent } from './stat/stat.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { CharttComponent } from './chart/chart.component';
+
 
 @NgModule({  
   declarations: [
@@ -53,13 +66,23 @@ import { ClaimsComponent } from './claims/claims.component';
     SignUpComponent,
     ListBankComponent,
     ClaimsComponent,
-    
-
+    ListSearchComponent,
+    CreateSearchComponent,
+    EditSearchComponent,
+    DetailsSearchComponent,
+    EditCommentComponent,
+    EmailComponent,
+    AdminComponent,
+    StatComponent,
+    CharttComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

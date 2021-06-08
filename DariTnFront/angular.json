@@ -34,6 +34,7 @@
               "src/assets/js/login.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js",
               "src/assets/vendor/php-email-form/validate.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
 
                       ]

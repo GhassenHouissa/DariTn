@@ -1,0 +1,15 @@
+<h2>*********************************************</h2><br/>
+
+<h2>Welcome to page of statistic for prices : </h2>
+<div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [fill]="chartOptions.fill"
+      [stroke]="chartOptions.stroke"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+  </div>
+
+  <button id="btnAdjust" (click)="static()" class="btn btn-success">Static of rental and purchase</button>

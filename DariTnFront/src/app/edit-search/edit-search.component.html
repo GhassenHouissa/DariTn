@@ -1,0 +1,25 @@
+<br>
+<div  style="width: 400px; margin: 0 auto;">
+    <h2>*************************</h2>
+    
+    <h3 style="text-align: center;">Update Search</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Type</label>
+            <input type="text" class="form-control" id="type" required [(ngModel)]="search.type" name="type">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Location</label>
+            <input type="text" class="form-control" id="location" required [(ngModel)]="search.location" name="location">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Price</label>
+            <input type="text" class="form-control" id="price" required [(ngModel)]="search.price" name="price">
+        </div>
+
+        <button type="submit" class="btn btn-success" style="margin: 0 auto;">Update</button>
+
+    </form>
+</div>

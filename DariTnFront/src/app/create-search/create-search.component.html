@@ -1,0 +1,59 @@
+<h2>WELCOME</h2>
+
+<h2>enter your personalized Search</h2><br>
+
+
+<div class="body"> 
+    <form class="form-horizontal"> 
+    <div class="row clearfix"> 
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs 
+    -5 form-control-label"> 
+    <label for="type">Type</label> 
+    </div> 
+    <div class="col-lg-10 col-md-10 col-sm-8 col 
+    xs-7"> 
+    <div class="form-group"> 
+    <div class="form-line"> 
+    <input name="type" [(ngModel)]="search.type" type="text" id="type" 
+    class="form-control" placeholder="Enter your favorite type"> </div> 
+    </div> 
+    </div> 
+    </div> 
+    <div class="row clearfix"> 
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs 
+    -5 form-control-label"> 
+    <label for="location">Location</label> 
+    </div> 
+    <div class="col-lg-10 col-md-10 col-sm-8 col 
+    xs-7"> 
+    <div class="form-group"> 
+    <div class="form-line"> 
+    <input name="location" [(ngModel)]="search.location" type="text" id="location" class="form-control" placeholder="Enter your location"> 
+    </div> 
+    </div> 
+    </div> 
+    </div> 
+    <div class="row clearfix"> 
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs 
+    -5 form-control-label"> 
+    <label for="price">Price</label> 
+    </div> 
+    <div class="col-lg-10 col-md-10 col-sm-8 col 
+    xs-7"> 
+    <div class="form-group"> 
+    <div class="form-line"> 
+    <input name="price" [(ngModel)]="search.price" type="text" id="price" class="form-control" placeholder="Enter your budget"> 
+    </div> 
+    </div> 
+    </div>
+    
+    </div>
+    <div class="row clearfix"> 
+        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+        <button (click)="addsearch()" type="button" 
+        class="btn btn-primary m-t-15 waves-effect">Add</button> </div> 
+        </div>
+    </form> 
+</div>
+
+        

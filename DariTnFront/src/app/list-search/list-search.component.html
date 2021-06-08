@@ -1,0 +1,53 @@
+
+<h1>******************************************************</h1>
+<h2>Welcome</h2>
+  <li class="active">
+
+    <a [routerLink]="['/addsearch']">
+    <i class="material-icons"></i>
+    <span>Add Search</span>
+    </a>
+    </li>
+
+    <br>
+<div class="row">
+  <div class="col-12">
+    <div class="content layer">
+      <div class="search-results">
+        <div style="margin-left:10px; margin-top:10px;">
+        <p>Click on a Search to see more details about it</p>
+  
+       
+
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let search of ListSearchs">
+                <td>{{search.type}}</td>
+                <td>{{search.price}}</td>
+                <td>{{search.location}}</td>
+                <td>
+                  <button id="btnAdjust" (click)="searchDetails(search.id)" class="btn btn-dark">Details</button>
+                  <button id="btnAdjust" (click)="updateSearch(search.id)" class="btn btn-success">Update</button>
+                  <button id="btnAdjust" (click)="deleteSearch(search.id , search.id2)" class="btn btn-danger">DELETE</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
