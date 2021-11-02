@@ -1,0 +1,98 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<button class="btn btn-success" routerLink="/Sign In">Retour</button>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- (ngSubmit)="f.form.valid && onSubmit()" -->
+<form *ngIf="!isSuccessful" name="form"  #f="ngForm" class="form-horizontal text-center" action='' method="POST" novalidate>
+  <fieldset>
+    <div id="legend">
+      <legend class="">Register</legend>
+    </div>
+    <div class="control-group">
+        <!-- Username -->
+        <label class="control-label"  for="firstName">FirstName</label>
+        <div class="controls">
+          <input type="text" id="firstName" name="firstName"  placeholder="" class="input-xlarge" [(ngModel)]="user.firstName" required #username="ngModel">
+          <p class="help-block">FirstName can contain any letters or numbers, without spaces</p>
+          <div class="alert-danger" *ngIf="username.errors && f.submitted">
+            <div *ngIf="username.errors.required">Username is required</div>
+            <div *ngIf="username.errors.minlength">
+              Username must be at least 3 characters
+            </div>
+            <div *ngIf="username.errors.maxlength">
+              Username must be at most 20 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+        <!-- Username -->
+        <label class="control-label"  for="lastName" name="lastName" >LastName</label>
+        <div class="controls">
+          <input type="text" id="lastName" name="lastName"  placeholder="" class="input-xlarge" [(ngModel)]="user.lastName">
+          <p class="help-block">LastName can contain any letters or numbers, without spaces</p>
+        </div>
+      </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">Username</label>
+      <div class="controls">
+        <input type="text" id="username" name="username" placeholder="" class="input-xlarge"[(ngModel)]="user.login">
+        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="email">E-mail</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" [(ngModel)]="user.email" required #email="ngModel" >
+        <p class="help-block">Please provide your E-mail</p>
+        <div class="alert-danger" >
+    
+          <!-- <div *ngIf="email.errors.email">
+            Email must be a valid email address
+          </div> -->
+        </div>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge" required [(ngModel)]="user.password"  #password="ngModel">
+        <p class="help-block">Password should be at least 4 characters</p>
+        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+         <button class="btn btn-success" (click)="save()">Register</button> <!-- (click)="onSubmit()" -->
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+    Signup failed!<br />{{ errorMessage }}
+  </div>
+
+</form>
+<div class="alert alert-success" *ngIf="isSuccessful">
+  Your registration is successful!
+</div>
+

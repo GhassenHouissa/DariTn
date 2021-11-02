@@ -52,13 +52,11 @@ public class Notification implements Serializable{
 	public void setSubjectNotif(String subjectNotif) {
 		SubjectNotif = subjectNotif;
 	}
-
 	@Override
 	public String toString() {
 		return "Notification [IdNotif=" + IdNotif + ", DescNotif=" + DescNotif + ", SubjectNotif=" + SubjectNotif + "]";
 	}
-	
-
-	
-
 }
+
+	
+
