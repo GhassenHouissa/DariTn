@@ -1,0 +1,39 @@
+<!-- <form (ngSubmit)="onSubmit()">
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+            <thead class="text-warning">
+                <th>ID</th>
+                <th>lastName</th>
+                <th>firstName</th>
+                <th>email</th>
+                <th>login</th>
+                <th>role</th>
+            </thead>
+            <tbody>
+                
+
+                <tr *ngFor="let u of user | async">
+                     <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" checked>
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div> 
+                    <td>{{u.id}}</td>
+                    <td>{{u.lastName}}</td>
+                    <td>{{u.firstName}}</td>
+                    <td>{{u.email}}</td>
+                    <td>{{u.login}}</td>
+                    <td>{{u.role}}</td>
+                   <button class="btn btn-success" routerLink="/User Profile"(click)="updateUser()">modify</button>
+                   <button class="btn btn-success" (click)="remove(u.id)">Delete</button>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+ -->

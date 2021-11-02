@@ -7,3 +7,4 @@ import tn.dari.spring.entity.Favorites;
 public interface FavoritesRepository extends CrudRepository<Favorites, Long> {
 
 }
+ 

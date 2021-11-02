@@ -1,0 +1,79 @@
+<br>
+<br>
+<br>
+<br>
+<button class="btn btn-success" routerLink="/Dashboard">Retour</button>
+ <div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+          <div class="alert alert-primary" role="alert" *ngIf="successUpdateFlag">
+            User Has been updated succesfully
+          </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title">Edit Profile</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form name="form"  #f="ngForm" class="form-horizontal text-center" action='' method="POST">
+                            <div class="row">
+                                <!--  <div class="col-md-5">
+                                  <mat-form-field class="example-full-width">
+                                      <input matInput id="id" name="id" placeholder="Id"  [(ngModel)]="user.id">
+                                    </mat-form-field>
+                                </div>  -->
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput id="login" name="login" placeholder="Username" [(ngModel)]="user.login">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput id="email" name="email" placeholder="Email address" type="email" [(ngModel)]="user.email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput id="firstName" name="firstName" placeholder="Fist Name" type="text" [(ngModel)]="user.firstName">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput id="lastName" name="lastName" placeholder="Last Name" type="text" [(ngModel)]="user.lastName">
+                                  </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput id="password" name="password" placeholder="Password" type="text" [(ngModel)]="user.password">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput id="role" name="role" placeholder="Role" type="text" [(ngModel)]="user.role">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                           
+                            <button class="btn btn-success" (click)="modify()">UPDATE PROFILE</button>
+                                
+                          
+                            <!-- <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="modify()">Update Profile</button> -->
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            
+
+                    </div>
+                </div>
+            </div>
+     
+ <router-outlet></router-outlet>
